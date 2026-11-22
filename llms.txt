@@ -1,0 +1,29 @@
+# Sidecar Apps
+
+> Sidecar Apps builds focused applications that use AI to make everyday tasks easier to understand and act on.
+
+Canonical website: https://sidecar360.com/
+
+## Current product
+
+- [CasaSense](https://casasense.sidecar360.com/): A home intelligence application that helps people identify and organize appliances, understand age and maintenance needs, review recalls, plan repairs or replacements, and share a home inventory with family members.
+
+CasaSense is currently in testing and is not yet listed in the public app stores.
+
+## How Sidecar Apps uses AI
+
+- Photos and equipment labels can be analyzed to reduce manual data entry.
+- Extracted details include their source and confidence so people can review uncertain information.
+- Home and appliance context is organized into practical maintenance, repair, recall, warranty, and replacement actions.
+- Users choose what to save, share, or send to a contractor.
+- Sidecar Apps does not represent an AI estimate as an inspection, warranty decision, recall determination, or contractor quote.
+
+## Key links
+
+- [Sidecar Apps home](https://sidecar360.com/)
+- [Try CasaSense on the web](https://casasense.sidecar360.com/)
+- [Sitemap](https://sidecar360.com/sitemap.xml)
+
+## Publisher
+
+Sidecar Apps is the publisher of CasaSense.

@@ -1,0 +1,7 @@
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://sidecar360.com/sitemap.xml
