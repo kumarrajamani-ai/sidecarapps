@@ -152,13 +152,20 @@
       font-size: 0.9rem;
     }
 
-    .site-nav > a:not(.nav-action) { color: var(--ink-soft); }
+    .site-nav > a { color: var(--ink-soft); }
+    .site-nav > a:hover { color: var(--ink); }
 
-    .nav-action,
-    .primary-action,
-    .secondary-action,
-    .band-action {
-      min-height: 2.8rem;
+    .site-nav .app-link,
+    .site-nav .about-link {
+      display: inline-flex;
+      min-height: 2.75rem;
+      align-items: center;
+    }
+
+    .web-action,
+    .secondary-action {
+      min-height: 3rem;
+      font-size: 0.95rem;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -168,49 +175,16 @@
       transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
     }
 
-    .nav-action,
-    .primary-action {
-      border: 1px solid var(--brand);
-      background: var(--brand);
-      color: #ffffff;
-    }
-
-    .nav-action:hover,
-    .primary-action:hover {
-      border-color: var(--brand-dark);
-      background: var(--brand-dark);
-    }
-
     .hero {
       padding: 3.9rem 0 3.2rem;
       display: grid;
       grid-template-columns: minmax(0, 0.92fr) minmax(26rem, 1.08fr);
-      gap: 3.5rem;
+      gap: clamp(1.75rem, 4vw, 3rem) 3.5rem;
       align-items: center;
     }
 
     .hero > * {
       min-width: 0;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      margin: 0 0 1rem;
-      color: var(--brand);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 0.5rem;
-      height: 0.5rem;
-      border-radius: 50%;
-      background: currentColor;
     }
 
     h1,
@@ -219,21 +193,60 @@
       text-wrap: balance;
     }
 
-    h1 {
-      max-width: 41rem;
+    .hero-intro { scroll-margin-top: 1.5rem; }
+
+    .hero-title {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
       margin: 0;
-      font-size: clamp(3rem, 5.8vw, 4.55rem);
+      font-size: clamp(2rem, 4.1vw, 3.55rem);
       font-weight: 700;
-      line-height: 0.99;
-      letter-spacing: -0.065em;
+      line-height: 1.06;
+      letter-spacing: -0.05em;
     }
 
-    .hero-copy {
-      max-width: 36rem;
-      margin: 1.45rem 0 0;
-      color: var(--ink-soft);
-      font-size: 1.08rem;
-      line-height: 1.65;
+    .hero-title img {
+      width: clamp(2.55rem, 5vw, 3.6rem);
+      height: auto;
+      flex: none;
+      border-radius: 0.8rem;
+    }
+
+    .hero-title strong {
+      font-weight: inherit;
+      white-space: nowrap;
+    }
+
+    .hero-features {
+      display: grid;
+      gap: 0.8rem;
+      margin: 1.7rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-features li {
+      display: grid;
+      grid-template-columns: 1.35rem minmax(0, 1fr);
+      align-items: start;
+      gap: 0.65rem;
+      color: var(--ink);
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    .feature-check {
+      display: grid;
+      place-items: center;
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-top: 0.17rem;
+      border-radius: 50%;
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      font-size: 0.85rem;
+      font-weight: 800;
     }
 
     .actions {
@@ -244,10 +257,15 @@
       gap: 0.75rem;
     }
 
-    .primary-action,
-    .secondary-action {
-      min-height: 3rem;
-      font-size: 0.95rem;
+    .web-action {
+      border: 1px solid var(--brand);
+      background: var(--brand);
+      color: #ffffff;
+    }
+
+    .web-action:hover {
+      border-color: var(--brand-dark);
+      background: var(--brand-dark);
     }
 
     .secondary-action {
@@ -260,159 +278,37 @@
       background: #ffffff;
     }
 
-    .trust-line {
-      margin-top: 1.7rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem 1.15rem;
-      color: #587168;
-      font-size: 0.84rem;
-    }
-
-    .trust-line span {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-    }
-
-    .trust-line svg {
-      width: 1rem;
-      height: 1rem;
-      color: var(--brand);
-      stroke-width: 1.8;
-    }
-
     .product-visual {
-      min-height: 39rem;
       min-width: 0;
-      max-width: 100%;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 7.5rem 0 0.5rem;
+      display: grid;
+      place-items: center;
       isolation: isolate;
     }
 
     .orb {
       position: absolute;
       z-index: -1;
-      inset: 3.6rem 3.3rem 2.8rem 3.8rem;
+      inset: 9% 4%;
       border-radius: 48% 52% 56% 44%;
       background: rgba(184, 226, 211, 0.62);
       transform: rotate(-6deg);
     }
 
-    .phone {
-      width: 19rem;
-      height: 38rem;
-      position: relative;
-      overflow: hidden;
-      border: 0.5rem solid #17352d;
-      border-radius: 2.75rem;
-      background: #ffffff;
-      box-shadow: 0 2.1rem 5rem rgba(18, 55, 46, 0.23);
-      transform: rotate(-2.5deg);
-    }
-
-    .phone::before {
-      content: "";
-      position: absolute;
-      z-index: 2;
-      top: 0.65rem;
-      left: 50%;
-      width: 5.5rem;
-      height: 1.5rem;
-      border-radius: 999px;
-      background: #050505;
-      transform: translateX(-50%);
-    }
-
-    .phone-screen {
-      width: 100%;
-      height: 100%;
+    .hero-video {
       display: block;
-      object-fit: cover;
-      object-position: top center;
+      width: min(100%, 19rem);
+      height: auto;
+      aspect-ratio: 9 / 16;
+      border: 0.35rem solid #17352d;
+      border-radius: 1.4rem;
+      background: #092b23;
+      box-shadow: 0 1.5rem 4rem rgba(18, 55, 46, 0.2);
     }
 
-    .app-pill {
-      position: absolute;
-      z-index: 3;
-      top: 2.1rem;
-      left: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      padding: 0.6rem 0.85rem 0.6rem 0.6rem;
-      border: 1px solid var(--line);
-      border-radius: 1rem;
-      background: rgba(255, 255, 255, 0.96);
-      box-shadow: 0 0.9rem 2rem rgba(18, 55, 46, 0.14);
-      font-size: 0.85rem;
-      font-weight: 700;
-      backdrop-filter: blur(10px);
-    }
-
-    .app-pill img {
-      width: 2.65rem;
-      height: 2.65rem;
-      display: block;
-      border-radius: 0.7rem;
-      object-fit: cover;
-    }
-
-    .ai-card {
-      width: 13.7rem;
-      position: absolute;
-      z-index: 4;
-      right: 0;
-      bottom: 4.2rem;
-      padding: 1.15rem;
-      border: 1px solid var(--line);
-      border-radius: 1.25rem;
-      background: rgba(255, 255, 255, 0.97);
-      box-shadow: 0 1.5rem 3.6rem rgba(18, 55, 46, 0.17);
-      backdrop-filter: blur(12px);
-    }
-
-    .ai-card-title {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 0 0 0.8rem;
-      font-size: 0.92rem;
-      font-weight: 700;
-    }
-
-    .ai-card-title svg {
-      width: 1.05rem;
-      height: 1.05rem;
-      color: var(--brand);
-    }
-
-    .ai-row {
-      padding: 0.68rem 0;
-      display: grid;
-      grid-template-columns: 1.4rem 1fr;
-      gap: 0.55rem;
-      align-items: start;
-      border-top: 1px solid rgba(20, 66, 55, 0.1);
-      color: #526b62;
-      font-size: 0.78rem;
-      line-height: 1.4;
-    }
-
-    .ai-row span {
-      width: 1.3rem;
-      height: 1.3rem;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: #dff1e9;
-      color: var(--brand);
-      font-size: 0.7rem;
-      font-weight: 800;
+    .hero-video:focus-visible {
+      outline: 3px solid #5ab79f;
+      outline-offset: 4px;
     }
 
     .how-it-works {
@@ -636,70 +532,37 @@
       line-height: 1.52;
     }
 
-    .product-band {
-      margin: 1.25rem 0 2.25rem;
-      padding: clamp(1.25rem, 4vw, 2.75rem);
+    .about {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 18rem);
-      align-items: center;
-      gap: clamp(1.25rem, 5vw, 4.5rem);
-      border-radius: 1.45rem;
-      background: #103f34;
-      color: #ffffff;
+      grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+      gap: 1.25rem 3rem;
+      padding: 2.75rem 0 3rem;
+      border-top: 1px solid var(--line);
       scroll-margin-top: 1.5rem;
     }
 
-    .product-band-content {
-      display: grid;
-      justify-items: start;
-      gap: 1rem;
-    }
-
-    .product-band-video {
-      display: block;
-      width: 100%;
-      max-width: 18rem;
-      height: auto;
-      aspect-ratio: 9 / 16;
-      justify-self: center;
-      border-radius: 0.95rem;
-      background: #092b23;
-    }
-
-    .product-band-copy {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .product-band img {
-      width: 3.5rem;
-      height: 3.5rem;
-      flex: none;
-      border-radius: 0.95rem;
-      object-fit: cover;
-    }
-
-    .product-band h2 {
-      margin: 0 0 0.2rem;
-      font-size: 1.15rem;
-      letter-spacing: -0.015em;
-    }
-
-    .product-band p {
+    .about h2 {
       margin: 0;
-      color: #c5d8d0;
-      font-size: 0.9rem;
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
+      line-height: 1.15;
+      letter-spacing: -0.045em;
     }
 
-    .band-action {
-      flex: none;
-      background: #ffffff;
-      color: #103f34;
-      font-size: 0.9rem;
+    .about p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.65;
     }
 
-    .band-action:hover { background: #eaf4f0; }
+    .about p + p { margin-top: 0.9rem; }
+
+    .about .about-lead {
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1.45;
+    }
 
     .site-footer {
       padding: 1.4rem 0 2rem;
@@ -742,46 +605,35 @@
     }
 
     @media (hover: hover) {
-      .nav-action:hover,
-      .primary-action:hover,
-      .secondary-action:hover,
-      .band-action:hover { transform: translateY(-1px); }
+      .web-action:hover,
+      .secondary-action:hover { transform: translateY(-1px); }
     }
 
     @media (max-width: 58rem) {
       .page-shell { padding: 0 1.5rem; }
       .hero { grid-template-columns: minmax(0, 1fr); }
-      .hero-copy { max-width: 43rem; }
       .product-visual { max-width: 38rem; width: 100%; margin: 0 auto; }
       .principles { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 42rem) {
       .page-shell { padding: 0 1.25rem; }
-      .site-header { min-height: 4.4rem; }
-      .site-nav { gap: 0.75rem; }
-      .site-nav > a:not(.nav-action) { display: none; }
+      .site-header { min-height: 4.4rem; gap: 0.75rem; }
+      .site-nav { gap: 0.75rem; font-size: 0.82rem; }
+      .site-nav > a:not(.app-link, .about-link) { display: none; }
       .wordmark { font-size: 1.1rem; }
       .sidecar-mark-wrap { width: 2.35rem; height: 2.35rem; border-radius: 0.7rem; }
       .sidecar-mark { width: 2.5rem; height: 2.5rem; }
-      .nav-action { min-height: 2.55rem; padding: 0.62rem 0.9rem; font-size: 0.82rem; }
-      .hero { padding: 2.8rem 0 2.7rem; gap: 2.5rem; }
-      h1 { font-size: clamp(2.65rem, 14vw, 3.65rem); }
-      .hero-copy { font-size: 1rem; }
+      .hero { padding: 2.5rem 0 2.7rem; gap: 1.8rem; }
       .actions { align-items: stretch; flex-direction: column; }
-      .primary-action, .secondary-action { width: 100%; }
-      .product-visual { min-height: 41rem; padding-right: 2.4rem; }
-      .phone { width: 17.4rem; height: 35.6rem; }
-      .app-pill { left: 0; }
-      .ai-card { right: 0; bottom: 1.75rem; }
-      .product-band { grid-template-columns: minmax(0, 1fr); }
-      .band-action { width: 100%; }
+      .web-action, .secondary-action { width: 100%; }
+      .about { grid-template-columns: minmax(0, 1fr); }
       .site-footer { align-items: flex-start; flex-direction: column; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .nav-action, .primary-action, .secondary-action, .band-action { transition: none; }
+      .web-action, .secondary-action { transition: none; }
     }
   </style>
 </head>
@@ -793,57 +645,40 @@
         <span class="wordmark-text"><span class="wordmark-sidecar">sidecar</span><span class="wordmark-apps">apps</span></span>
       </a>
       <nav class="site-nav" aria-label="Main navigation">
+        <a class="app-link" href="#casasense">CasaSense</a>
         <a href="#how-ai-helps">How AI helps</a>
         <a href="#why-trust-us">Why trust us</a>
-        <a href="#casasense">CasaSense</a>
-        <a class="nav-action" href="https://casasense.sidecar360.com">Try CasaSense</a>
+        <a class="about-link" href="#about">About</a>
       </nav>
     </header>
 
     <main id="top">
       <section class="hero" id="how-ai-helps">
-        <div>
-          <p class="eyebrow">AI you can understand</p>
-          <h1>Useful answers. Clear sources. You stay in control.</h1>
-          <p class="hero-copy">Sidecar apps use AI to handle the tedious work—reading labels, organizing details and finding the next step—while showing you what it found and when it is uncertain.</p>
+        <div class="hero-intro" id="casasense">
+          <h1 class="hero-title">
+            <img src="assets/casasense-icon-192.png" alt="" width="192" height="192">
+            <span><strong>CasaSense -</strong> Your home has a lot to tell you.</span>
+          </h1>
+          <ul class="hero-features" role="list">
+            <li><span class="feature-check" aria-hidden="true">✓</span><span>Photograph an appliance or scan its label to save model and serial numbers.</span></li>
+            <li><span class="feature-check" aria-hidden="true">✓</span><span>Track appliance age and warranty details.</span></li>
+            <li><span class="feature-check" aria-hidden="true">✓</span><span>Get maintenance reminders and recall checks.</span></li>
+            <li><span class="feature-check" aria-hidden="true">✓</span><span>Compare replacement options and plan for costs.</span></li>
+            <li><span class="feature-check" aria-hidden="true">✓</span><span>Share appliance details with tenants and contractors.</span></li>
+          </ul>
           <div class="actions">
-            <a class="primary-action" href="https://casasense.sidecar360.com">Try CasaSense</a>
+            <a class="web-action" href="https://casasense.sidecar360.com/">Try CasaSense (Web)</a>
             <a class="secondary-action" href="#how-it-works">See how it works</a>
-          </div>
-          <div class="trust-line" aria-label="Sidecar AI trust features">
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>
-              Review before saving
-            </span>
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 3a3.6 3.6 0 0 0-3.05 1.68 3.6 3.6 0 0 0-3.58 1.04 3.6 3.6 0 0 0-.72 3.66A3.6 3.6 0 0 0 3 12.5a3.6 3.6 0 0 0 1.68 3.05 3.6 3.6 0 0 0 1.04 3.58 3.6 3.6 0 0 0 3.66.72A3.6 3.6 0 0 0 12.5 21a3.6 3.6 0 0 0 3.05-1.68 3.6 3.6 0 0 0 3.58-1.04 3.6 3.6 0 0 0 .72-3.66A3.6 3.6 0 0 0 21 11.5a3.6 3.6 0 0 0-1.68-3.05 3.6 3.6 0 0 0-1.04-3.58 3.6 3.6 0 0 0-3.66-.72A3.6 3.6 0 0 0 12 3Z"/><path d="m9 12 2 2 4-4"/></svg>
-              Confidence shown
-            </span>
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-4 0v5-1.5a2 2 0 0 0-4 0V11 8a2 2 0 0 0-4 0v5l-1.1-1.1a2 2 0 0 0-2.8 2.8l4.2 4.2A7 7 0 0 0 11.2 21H14a7 7 0 0 0 7-7v-3a2 2 0 0 0-4 0"/></svg>
-              Sharing is your choice
-            </span>
           </div>
         </div>
 
-        <div class="product-visual" aria-label="CasaSense mobile app and AI explanation">
+        <div class="product-visual">
           <div class="orb" aria-hidden="true"></div>
-          <div class="app-pill">
-            <img src="assets/casasense-icon-192.png" alt="" width="192" height="192">
-            <span>CasaSense</span>
-          </div>
-          <div class="phone">
-            <img class="phone-screen" src="assets/casasense-health.jpg" alt="CasaSense showing a water heater health score and confidence for details read from its label" width="800" height="1739">
-          </div>
-          <div class="ai-card">
-            <p class="ai-card-title">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="m12 3-1.9 5.1L5 10l5.1 1.9L12 17l1.9-5.1L19 10l-5.1-1.9Z"/><path d="M5 3v4M3 5h4M19 17v4M17 19h4"/></svg>
-              What AI did
-            </p>
-            <div class="ai-row"><span aria-hidden="true">✓</span><div>Read the model and serial from the label</div></div>
-            <div class="ai-row"><span aria-hidden="true">✓</span><div>Showed confidence for every extracted detail</div></div>
-            <div class="ai-row"><span aria-hidden="true">✓</span><div>Turned the record into a clear next step</div></div>
-          </div>
+          <video class="hero-video" id="casasense-demo" controls playsinline muted loop preload="none" width="720" height="1280"
+                 poster="assets/casasense-demo-poster.webp" aria-label="CasaSense product demo, 30 seconds">
+            <source src="assets/casasense-demo.mp4" type="video/mp4">
+            <a href="assets/casasense-demo.mp4">Watch the CasaSense demo</a>
+          </video>
         </div>
       </section>
 
@@ -917,22 +752,13 @@
         </article>
       </section>
 
-      <section class="product-band" id="casasense" aria-labelledby="casasense-heading">
-        <div class="product-band-content">
-          <div class="product-band-copy">
-            <img src="assets/casasense-icon-192.png" alt="" width="192" height="192">
-            <div>
-              <h2 id="casasense-heading">See CasaSense in action</h2>
-              <p>Watch the 30-second demo to see how to scan an appliance label, compare replacements, and keep up with reminders.</p>
-            </div>
-          </div>
-          <a class="band-action" href="https://casasense.sidecar360.com">Open CasaSense</a>
+      <section class="about" id="about" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Sidecar Apps</h2>
+        <div>
+          <p class="about-lead">We build consumer apps that use AI on the device and in the cloud to make everyday tasks easier.</p>
+          <p>AI runs on your phone when it can do the work there. The cloud helps when a task needs a more capable model or information from outside the device. Using both helps us keep common tasks fast, send less data, and manage the cost of serving each user.</p>
+          <p>CasaSense is our first app. It turns a photo of an appliance label into a record you can use for maintenance, warranty claims, and repairs. Our goal is to bring that same approach to other everyday tasks where people spend too much time gathering information before they can act.</p>
         </div>
-        <video class="product-band-video" controls playsinline muted loop preload="none" width="720" height="1280"
-               poster="assets/casasense-demo-poster.webp" aria-label="CasaSense product demo, 30 seconds">
-          <source src="assets/casasense-demo.mp4" type="video/mp4">
-          <a href="assets/casasense-demo.mp4">Watch the CasaSense demo</a>
-        </video>
       </section>
     </main>
 
@@ -945,7 +771,7 @@
     </footer>
   </div>
   <script>
-    const casaSenseDemo = document.querySelector(".product-band-video");
+    const casaSenseDemo = document.getElementById("casasense-demo");
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     if (!prefersReducedMotion.matches && "IntersectionObserver" in window) {
