@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Sidecar Apps | Consumer Apps With On-Device AI</title>
-  <meta name="description" content="Learn how Sidecar Apps uses on-device and cloud AI to build consumer apps for everyday tasks, starting with CasaSense for home appliance care.">
+  <title>About Sidecar Apps | CasaSense and Investor Information</title>
+  <meta name="description" content="Meet Sidecar Apps, the team building consumer apps with on-device and cloud AI. Explore CasaSense, our first app, and read our investor overview.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sidecar Apps">
-  <meta property="og:title" content="About Sidecar Apps | Consumer Apps With On-Device AI">
-  <meta property="og:description" content="Learn how Sidecar Apps uses on-device and cloud AI to build consumer apps for everyday tasks, starting with CasaSense for home appliance care.">
+  <meta property="og:title" content="About Sidecar Apps | CasaSense and Investor Information">
+  <meta property="og:description" content="Meet Sidecar Apps, the team building consumer apps with on-device and cloud AI. Explore CasaSense, our first app, and read our investor overview.">
   <meta property="og:url" content="https://sidecar360.com/about.html">
   <meta property="og:image" content="https://sidecar360.com/assets/sidecar-icon.png">
   <meta property="og:image:alt" content="Sidecar Apps logo">
@@ -39,20 +39,71 @@
     nav { display: flex; gap: clamp(0.75rem, 2vw, 1.5rem); font-size: 0.9rem; }
     nav a { display: inline-flex; align-items: center; min-height: 2.75rem; text-decoration: none; }
     nav [aria-current] { font-weight: 700; }
-    main { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: start; gap: 2rem 4rem; padding: clamp(2rem, 6vw, 4rem) 0; }
-    h1, h2 { margin: 0; font-family: Manrope, sans-serif; line-height: 1.12; letter-spacing: -0.04em; }
+    main { max-width: 65rem; margin-inline: auto; padding: clamp(2rem, 5vw, 4rem) 0; }
+    h1, h2, h3 { margin: 0; font-family: Manrope, sans-serif; line-height: 1.18; letter-spacing: -0.035em; }
     h1 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
-    h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); }
-    p { margin: 0.9rem 0 0; color: #49675c; }
-    .lead { font-size: 1.2rem; font-weight: 700; color: #12372e; }
-    .first-app { padding: clamp(1.25rem, 4vw, 2rem); border: 1px solid #cdded7; border-radius: 1.15rem; background: #fff; }
-    .first-app img { display: block; width: 2.9rem; height: auto; margin-bottom: 0.85rem; border-radius: 0.7rem; }
-    .links { display: flex; flex-wrap: wrap; gap: 0.65rem 1.5rem; margin-top: 1.25rem; }
-    main a { display: inline-flex; align-items: center; min-height: 2.75rem; color: #05604e; font-weight: 700; text-underline-offset: 0.24em; }
-    .first-app a { margin-top: 0.75rem; }
+    h2 { font-size: clamp(1.45rem, 3vw, 2.05rem); }
+    h3 { font-size: 1.08rem; }
+    p { margin: 0.75rem 0 0; color: #49675c; }
+    .about-intro { max-width: 42rem; }
+    .lead { font-size: clamp(1.13rem, 2.3vw, 1.4rem); font-weight: 700; color: #12372e; line-height: 1.45; }
+    .intro-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.65rem; margin-top: 1rem; }
+    main a { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; color: #05604e; font-weight: 700; text-underline-offset: 0.23em; }
+    .about-jump { gap: 0.4rem; }
+    .first-app {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.8fr);
+      align-items: center;
+      gap: clamp(1.25rem, 4vw, 3.25rem);
+      margin-top: clamp(1.5rem, 5vw, 3.25rem);
+      padding: clamp(1.25rem, 4vw, 2.4rem);
+      border: 1px solid #cdded7;
+      border-radius: 1.25rem;
+      background: #fff;
+    }
+    .app-heading { display: flex; align-items: center; gap: 0.75rem; }
+    .app-icon { width: 2.75rem; height: auto; flex: none; border-radius: 0.65rem; }
+    .app-photo {
+      display: block;
+      width: 100%;
+      max-width: 24rem;
+      height: auto;
+      border-radius: 0.9rem;
+    }
+    .first-app a { margin-top: 0.8rem; }
+    .investors {
+      margin-top: clamp(1.35rem, 4vw, 2.5rem);
+      padding: clamp(1.25rem, 4.5vw, 2.5rem);
+      border-radius: 1.25rem;
+      background: #12372e;
+      color: #fff;
+      scroll-margin-top: 1.25rem;
+    }
+    .investors p, .investors li { color: #e2efe9; }
+    .investors > p { max-width: 42rem; }
+    .investor-details {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem 2.25rem;
+      margin: 1.5rem 0 1.2rem;
+      padding-top: 1.35rem;
+      border-top: 1px solid #567b70;
+    }
+    .investor-details ul { margin: 0.75rem 0 0; padding-left: 1.25rem; }
+    .investor-details li + li { margin-top: 0.2rem; }
+    .investors .contact {
+      padding: 0.55rem 1.05rem;
+      border-radius: 999px;
+      background: #e8f7f0;
+      color: #12372e;
+      text-decoration: none;
+    }
+    .investors .contact:hover { background: #fff; }
     a:focus-visible { outline: 3px solid #5ab79f; outline-offset: 4px; }
-    @media (max-width: 49rem) {
-      main { grid-template-columns: minmax(0, 1fr); }
+    @media (max-width: 42rem) {
+      header { gap: 0.75rem; }
+      nav { font-size: 0.82rem; }
+      .first-app, .investor-details { grid-template-columns: minmax(0, 1fr); }
     }
   </style>
   <link rel="stylesheet" href="sidecar-brand.css?v=2">
@@ -70,20 +121,47 @@
       </nav>
     </header>
     <main>
-      <div>
-        <h1>About Sidecar Apps</h1>
-        <p class="lead">Sidecar Apps is building a family of consumer apps that use on-device and cloud AI to make everyday tasks easier.</p>
-        <p>We use AI on your phone when it can handle the task there. The cloud helps when a task needs more analysis or information from outside the device. This keeps common tasks quick and reduces how much data needs to leave your phone.</p>
-        <div class="links">
-          <a href="investors.html">For investors</a>
+      <section class="about-intro" aria-labelledby="about-heading">
+        <h1 id="about-heading">About Sidecar Apps</h1>
+        <p class="lead">We build consumer apps that use AI to make everyday tasks easier.</p>
+        <p>Our apps handle tasks like reading a photo on your phone when they can. The cloud helps when a task needs more analysis or outside information. That keeps common tasks quick and reduces how much data needs to leave your phone.</p>
+        <div class="intro-links">
+          <a class="about-jump" href="#investors">For investors <span aria-hidden="true">↓</span></a>
           <a href="contact.html">Contact Sidecar Apps</a>
         </div>
-      </div>
+      </section>
+
       <section class="first-app" aria-labelledby="first-app-heading">
-        <img src="assets/casasense-icon-192.png" alt="" width="192" height="192">
-        <h2 id="first-app-heading">CasaSense is our first app</h2>
-        <p>CasaSense helps households track their appliances, stay ahead of maintenance, and share the details when something needs fixing.</p>
-        <a href="./#casasense">Explore CasaSense</a>
+        <div>
+          <div class="app-heading">
+            <img class="app-icon" src="assets/casasense-icon-192.png" alt="" width="192" height="192">
+            <h2 id="first-app-heading">CasaSense is our first app</h2>
+          </div>
+          <p>CasaSense helps homeowners and landlords keep an appliance inventory, stay on top of maintenance, and share the details when something needs fixing.</p>
+          <p>Our founder wrote the first version on a flight to Bangalore after a water heater broke at their rental and nobody knew how old it was.</p>
+          <a href="./#sample-home">Explore a sample appliance record</a>
+        </div>
+        <img class="app-photo" src="assets/sample-water-heater.webp" alt="CasaSense reading the model number on a water heater label" width="480" height="506">
+      </section>
+
+      <section class="investors" id="investors" aria-labelledby="investor-heading" tabindex="-1">
+        <h2 id="investor-heading">For investors</h2>
+        <p>Each Sidecar app starts with a specific task people already spend time on. Handling routine tasks on the device reduces cloud requests and helps control the cost of serving each user.</p>
+        <div class="investor-details">
+          <section aria-labelledby="tested-heading">
+            <h3 id="tested-heading">What we’ve tested</h3>
+            <p>In one controlled engineering test, 16 simultaneous submissions of the same appliance photo shared a single cloud recognition call.</p>
+          </section>
+          <section aria-labelledby="measure-heading">
+            <h3 id="measure-heading">What we’ll measure</h3>
+            <ul>
+              <li>Households that save their first appliance</li>
+              <li>Households that return for maintenance or repairs</li>
+              <li>Recognition cost per saved appliance</li>
+            </ul>
+          </section>
+        </div>
+        <a class="contact" href="contact.html">Contact Sidecar Apps</a>
       </section>
     </main>
   </div>

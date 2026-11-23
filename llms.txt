@@ -21,6 +21,6 @@ CasaSense can read a label on the phone and send only the extracted text when it
 ## Sidecar Apps
 
 - [About Sidecar Apps](https://sidecar360.com/about.html)
-- [Sidecar Apps investor overview](https://sidecar360.com/investors.html)
+- [Sidecar Apps investor overview](https://sidecar360.com/about.html#investors)
 - [Contact Sidecar Apps](https://sidecar360.com/contact.html)
 - [Site sitemap](https://sidecar360.com/sitemap.xml)
