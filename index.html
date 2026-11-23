@@ -558,9 +558,9 @@
       .web-action, .secondary-action { transition: none; }
     }
   </style>
-  <link rel="stylesheet" href="casasense-home.css">
+  <link rel="stylesheet" href="casasense-home.css?v=2">
   <link rel="stylesheet" href="sidecar-brand.css?v=2">
-  <script src="casasense-home.js" defer></script>
+  <script src="casasense-home.js?v=2" defer></script>
 </head>
 <body>
   <div class="page-shell">
@@ -619,7 +619,7 @@
               </ul>
               <div class="actions">
                 <a class="web-action" href="https://casasense.sidecar360.com/">Try CasaSense (Web)</a>
-                <a class="secondary-action" href="#sample-home">Explore a sample home</a>
+                <a class="secondary-action" href="#sample-home">Open a sample appliance record</a>
               </div>
             </div>
 
@@ -634,22 +634,36 @@
           </div>
 
           <section class="sample-home" id="sample-home" aria-labelledby="sample-heading">
-            <h2 id="sample-heading">Explore a sample home</h2>
-            <p>Pick an appliance to see what you’d have handy if something broke.</p>
+            <h2 id="sample-heading">When the water heater breaks</h2>
+            <p>Find the details you can share with a home warranty company, a contractor you find on Thumbtack, or an appliance seller.</p>
+            <p><strong>Your appliance records belong to you.</strong> You choose what to share and with whom.</p>
             <div class="sample-layout">
-              <ul class="sample-items" role="list" aria-label="Sample appliances">
-                <li><button type="button" data-sample="waterHeater" aria-pressed="true" aria-controls="sample-record"><strong>Water heater</strong><small>Garage</small></button></li>
-                <li><button type="button" data-sample="refrigerator" aria-pressed="false" aria-controls="sample-record"><strong>Refrigerator</strong><small>Kitchen</small></button></li>
-              </ul>
+              <div class="sample-guide">
+                <h3>What would you look up first?</h3>
+                <ul class="sample-questions" role="list" aria-label="Details to look up">
+                  <li><button type="button" data-sample-field="model" aria-pressed="true" aria-controls="sample-answer">Model number</button></li>
+                  <li><button type="button" data-sample-field="warranty" aria-pressed="false" aria-controls="sample-answer">Warranty status</button></li>
+                  <li><button type="button" data-sample-field="installed" aria-pressed="false" aria-controls="sample-answer">Installation year</button></li>
+                </ul>
+                <div class="sample-answer" id="sample-answer" role="status">
+                  <strong id="sample-answer-value">XE50T10HD50U1</strong>
+                  <span id="sample-answer-note">Share this with a contractor for a repair quote or an appliance seller to compare replacements.</span>
+                </div>
+                <p class="sample-switcher-label">Try a different appliance</p>
+                <ul class="sample-items" role="list" aria-label="Sample appliances">
+                  <li><button type="button" data-sample="waterHeater" aria-pressed="true" aria-controls="sample-record"><strong>Water heater</strong><small>Garage</small></button></li>
+                  <li><button type="button" data-sample="refrigerator" aria-pressed="false" aria-controls="sample-record"><strong>Refrigerator</strong><small>Kitchen</small></button></li>
+                </ul>
+              </div>
               <article class="sample-record" id="sample-record" aria-labelledby="sample-name">
                 <img class="sample-photo" id="sample-photo" src="assets/sample-water-heater.webp" alt="CasaSense reading the label on a water heater" loading="lazy" width="480" height="506">
                 <div>
                   <h3 id="sample-name" aria-live="polite">Water heater</h3>
                   <p class="sample-location" id="sample-location">Garage</p>
                   <dl class="sample-facts">
-                    <div><dt>Installed</dt><dd id="sample-installed">2015</dd></div>
-                    <div><dt>Warranty</dt><dd id="sample-warranty">Ended</dd></div>
-                    <div><dt>Model number</dt><dd id="sample-model">XE50T10HD50U1</dd></div>
+                    <div data-sample-fact="installed"><dt>Installed</dt><dd id="sample-installed">2015</dd></div>
+                    <div data-sample-fact="warranty"><dt>Warranty</dt><dd id="sample-warranty">Ended</dd></div>
+                    <div data-sample-fact="model" class="sample-fact-active"><dt>Model number</dt><dd id="sample-model">XE50T10HD50U1</dd></div>
                     <div><dt>Next maintenance</dt><dd id="sample-maintenance">Schedule a service check</dd></div>
                   </dl>
                 </div>

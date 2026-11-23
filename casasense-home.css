@@ -57,12 +57,24 @@
 
 .sample-layout {
   display: grid;
-  grid-template-columns: minmax(10.5rem, 0.55fr) minmax(0, 1.45fr);
+  grid-template-columns: minmax(14rem, 0.8fr) minmax(0, 1.2fr);
   gap: 1.15rem;
   align-items: start;
 }
 
-.sample-items {
+.sample-guide {
+  padding: clamp(1rem, 3vw, 1.4rem);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: var(--surface);
+}
+
+.sample-guide h3 {
+  margin: 0 0 0.8rem;
+  font: 800 1.2rem/1.25 Manrope, sans-serif;
+}
+
+.sample-questions, .sample-items {
   display: grid;
   gap: 0.55rem;
   margin: 0;
@@ -70,6 +82,10 @@
   list-style: none;
 }
 
+.sample-questions { grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); }
+.sample-items { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.sample-questions button,
 .sample-items button {
   width: 100%;
   padding: 0.8rem 0.95rem;
@@ -82,14 +98,36 @@
   cursor: pointer;
 }
 
+.sample-questions button {
+  min-height: 2.75rem;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.sample-questions button[aria-pressed="true"],
 .sample-items button[aria-pressed="true"] {
   border-color: var(--brand);
   background: var(--brand-soft);
 }
 
+.sample-questions button:focus-visible,
 .sample-items button:focus-visible { outline: 3px solid #5ab79f; outline-offset: 3px; }
 .sample-items strong, .sample-items small { display: block; }
 .sample-items small { color: var(--ink-soft); font-size: 0.82rem; }
+
+.sample-answer {
+  display: grid;
+  gap: 0.2rem;
+  margin-top: 0.9rem;
+  padding: 0.75rem 0.9rem;
+  border-inline-start: 3px solid var(--brand);
+  border-radius: 0 0.6rem 0.6rem 0;
+  background: var(--brand-soft);
+}
+
+.sample-answer span { color: var(--ink-soft); font-size: 0.9rem; }
+.sample-switcher-label { margin: 1rem 0 0.5rem; color: var(--ink-soft); font-size: 0.875rem; }
 
 .sample-record {
   display: grid;
@@ -129,6 +167,8 @@
 
 .sample-facts dt { color: var(--ink-soft); font-size: 0.82rem; }
 .sample-facts dd { margin: 0.1rem 0 0; font-weight: 700; }
+.sample-facts > div { min-width: 0; padding: 0.32rem 0.45rem; border-radius: 0.5rem; overflow-wrap: anywhere; }
+.sample-fact-active { background: var(--brand-soft); }
 
 .sample-next { grid-column: 2; }
 .sample-next p { margin: 0 0 0.8rem; color: var(--ink-soft); }
@@ -137,7 +177,6 @@
 
 @media (max-width: 49rem) {
   .sample-layout { grid-template-columns: minmax(0, 1fr); }
-  .sample-items { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 35rem) {

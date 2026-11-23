@@ -98,27 +98,57 @@ const sampleAppliances = {
     photoAlt: "A homeowner using the phone beside a refrigerator",
     installed: "2021",
     warranty: "Check your receipt",
-    model: "Saved in your record",
+    model: "RF-SAMPLE-221",
     maintenance: "Replace the water filter",
     next: "Look up the model number before you buy a replacement filter.",
   },
 };
 
 const sampleButtons = Array.from(document.querySelectorAll("[data-sample]"));
+const sampleQuestions = Array.from(document.querySelectorAll("[data-sample-field]"));
+const sampleFacts = document.querySelectorAll("[data-sample-fact]");
+const sampleAnswerValue = document.getElementById("sample-answer-value");
+const sampleAnswerNote = document.getElementById("sample-answer-note");
+const sampleAnswerNotes = {
+  model: "Share this with a contractor for a repair quote or an appliance seller to compare replacements.",
+  warranty: "Check your coverage and share the appliance details with your home warranty company if you file a claim.",
+  installed: "Use the installation year to estimate the appliance’s age.",
+};
+let activeSample = sampleAppliances.waterHeater;
+let activeSampleField = "model";
+
+function showSampleAnswer() {
+  sampleAnswerValue.textContent = activeSample[activeSampleField];
+  sampleAnswerNote.textContent = sampleAnswerNotes[activeSampleField];
+  for (const question of sampleQuestions) {
+    question.setAttribute("aria-pressed", String(question.dataset.sampleField === activeSampleField));
+  }
+  for (const fact of sampleFacts) {
+    fact.classList.toggle("sample-fact-active", fact.dataset.sampleFact === activeSampleField);
+  }
+}
+
+for (const question of sampleQuestions) {
+  question.addEventListener("click", () => {
+    activeSampleField = question.dataset.sampleField;
+    showSampleAnswer();
+  });
+}
 
 for (const button of sampleButtons) {
   button.addEventListener("click", () => {
-    const record = sampleAppliances[button.dataset.sample];
+    activeSample = sampleAppliances[button.dataset.sample];
     const photo = document.getElementById("sample-photo");
 
     for (const field of ["name", "location", "installed", "warranty", "model", "maintenance", "next"]) {
-      document.getElementById("sample-" + field).textContent = record[field];
+      document.getElementById("sample-" + field).textContent = activeSample[field];
     }
 
-    photo.src = record.photo;
-    photo.alt = record.photoAlt;
+    photo.src = activeSample.photo;
+    photo.alt = activeSample.photoAlt;
     for (const item of sampleButtons) {
       item.setAttribute("aria-pressed", String(item === button));
     }
+    showSampleAnswer();
   });
 }
