@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Sidecar Apps</title>
+  <meta name="description" content="Send a message to the Sidecar Apps team. No account required.">
+  <link rel="canonical" href="https://sidecar360.com/contact.html">
+  <link rel="icon" href="assets/sidecar-icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #12372e; background: #f4faf7; font: 1rem/1.65 "DM Sans", system-ui, sans-serif; }
+    .shell { width: min(76rem, 100%); margin: auto; padding: 0 clamp(1.25rem, 5vw, 3.5rem); }
+    header { min-height: 4.7rem; display: flex; align-items: center; border-bottom: 1px solid #cdded7; }
+    header a { color: inherit; }
+    main { max-width: 37rem; margin: 0 auto; padding: clamp(2rem, 6vw, 4rem) 0; }
+    h1 { margin: 0; font: 800 clamp(2rem, 6vw, 3rem)/1.12 Manrope, sans-serif; letter-spacing: -0.04em; }
+    p { margin: 0.7rem 0 0; color: #49675c; }
+    form { position: relative; margin-top: 1.5rem; padding: clamp(1rem, 4vw, 1.5rem); border: 1px solid #cdded7; border-radius: 1.15rem; background: #fff; }
+    label { display: grid; gap: 0.35rem; margin-bottom: 1rem; font-weight: 700; }
+    input, textarea { width: 100%; padding: 0.65rem 0.8rem; border: 1px solid #8caaa0; border-radius: 0.55rem; color: inherit; font: inherit; font-weight: 400; }
+    textarea { resize: vertical; }
+    button { min-height: 2.75rem; padding: 0.65rem 1.05rem; border: 0; border-radius: 999px; color: #fff; background: #087b64; font: inherit; font-weight: 700; cursor: pointer; }
+    button:disabled { opacity: 0.65; cursor: default; }
+    a:focus-visible, input:focus-visible, textarea:focus-visible, button:focus-visible { outline: 3px solid #5ab79f; outline-offset: 3px; }
+    .contact-website { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    #contact-status:empty { margin: 0; }
+    #contact-status[data-error] { color: #a12b25; }
+  </style>
+  <link rel="stylesheet" href="sidecar-brand.css?v=2">
+  <script src="contact.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <a class="wordmark" href="./" aria-label="Sidecar Apps home">
+        <img class="sidecar-mark" src="assets/sidecar-icon-192.png" alt="" width="192" height="184">
+        <span>Sidecar <span class="wordmark-apps">Apps</span></span>
+      </a>
+    </header>
+    <main>
+      <h1>Contact Sidecar Apps</h1>
+      <p>Send a note to the Sidecar Apps team. No CasaSense account required.</p>
+      <form id="contact-form" method="post">
+        <label>
+          Email for a reply
+          <input name="email" type="email" autocomplete="email" maxlength="255" required>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="6" maxlength="5000" required></textarea>
+        </label>
+        <label class="contact-website" aria-hidden="true">
+          Website
+          <input name="website" type="text" tabindex="-1" autocomplete="off" maxlength="200">
+        </label>
+        <button type="submit" disabled>Send message</button>
+        <p id="contact-status" role="status"></p>
+        <noscript><p>Enable JavaScript to send a message.</p></noscript>
+      </form>
+    </main>
+  </div>
+</body>
+</html>
