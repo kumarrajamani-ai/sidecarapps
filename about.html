@@ -40,10 +40,9 @@
     nav a { display: inline-flex; align-items: center; min-height: 2.75rem; text-decoration: none; }
     nav [aria-current] { font-weight: 700; }
     main { max-width: 65rem; margin-inline: auto; padding: clamp(2rem, 5vw, 4rem) 0; }
-    h1, h2, h3 { margin: 0; font-family: Manrope, sans-serif; line-height: 1.18; letter-spacing: -0.035em; }
+    h1, h2 { margin: 0; font-family: Manrope, sans-serif; line-height: 1.18; letter-spacing: -0.035em; }
     h1 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
     h2 { font-size: clamp(1.45rem, 3vw, 2.05rem); }
-    h3 { font-size: 1.08rem; }
     p { margin: 0.75rem 0 0; color: #49675c; }
     .about-intro { max-width: 42rem; }
     .lead { font-size: clamp(1.13rem, 2.3vw, 1.4rem); font-weight: 700; color: #12372e; line-height: 1.45; }
@@ -79,19 +78,9 @@
       color: #fff;
       scroll-margin-top: 1.25rem;
     }
-    .investors p, .investors li { color: #e2efe9; }
-    .investors > p { max-width: 42rem; }
-    .investor-details {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.2rem 2.25rem;
-      margin: 1.5rem 0 1.2rem;
-      padding-top: 1.35rem;
-      border-top: 1px solid #567b70;
-    }
-    .investor-details ul { margin: 0.75rem 0 0; padding-left: 1.25rem; }
-    .investor-details li + li { margin-top: 0.2rem; }
+    .investors p { max-width: 42rem; color: #e2efe9; }
     .investors .contact {
+      margin-top: 1.15rem;
       padding: 0.55rem 1.05rem;
       border-radius: 999px;
       background: #e8f7f0;
@@ -103,7 +92,7 @@
     @media (max-width: 42rem) {
       header { gap: 0.75rem; }
       nav { font-size: 0.82rem; }
-      .first-app, .investor-details { grid-template-columns: minmax(0, 1fr); }
+      .first-app { grid-template-columns: minmax(0, 1fr); }
     }
   </style>
   <link rel="stylesheet" href="sidecar-brand.css?v=2">
@@ -147,20 +136,6 @@
       <section class="investors" id="investors" aria-labelledby="investor-heading" tabindex="-1">
         <h2 id="investor-heading">For investors</h2>
         <p>Each Sidecar app starts with a specific task people already spend time on. Handling routine tasks on the device reduces cloud requests and helps control the cost of serving each user.</p>
-        <div class="investor-details">
-          <section aria-labelledby="tested-heading">
-            <h3 id="tested-heading">What we’ve tested</h3>
-            <p>In one controlled engineering test, 16 simultaneous submissions of the same appliance photo shared a single cloud recognition call.</p>
-          </section>
-          <section aria-labelledby="measure-heading">
-            <h3 id="measure-heading">What we’ll measure</h3>
-            <ul>
-              <li>Households that save their first appliance</li>
-              <li>Households that return for maintenance or repairs</li>
-              <li>Recognition cost per saved appliance</li>
-            </ul>
-          </section>
-        </div>
         <a class="contact" href="contact.html">Contact Sidecar Apps</a>
       </section>
     </main>
