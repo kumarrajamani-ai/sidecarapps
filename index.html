@@ -257,10 +257,48 @@
       gap: 0.75rem;
     }
 
-    .store-availability {
-      margin: 0.85rem 0 0;
-      color: var(--ink-soft);
+    .platforms {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 0.6rem 0.9rem;
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .platforms > li + li {
+      padding-inline-start: 0.9rem;
+      border-inline-start: 1px solid var(--line);
+    }
+
+    .platform {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+      min-height: 2.75rem;
+      color: var(--ink);
       font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    a.platform:hover { color: var(--brand-dark); }
+
+    .platform svg,
+    .platform img {
+      flex: none;
+      width: 1.05rem;
+      height: 1.05rem;
+      object-fit: contain;
+    }
+
+    .platform small {
+      display: block;
+      margin-top: 0.22rem;
+      color: var(--ink-soft);
+      font-size: 0.8rem;
+      font-weight: 400;
     }
 
     .web-action {
@@ -631,6 +669,8 @@
       .sidecar-mark-wrap { width: 2.35rem; height: 2.35rem; border-radius: 0.7rem; }
       .sidecar-mark { width: 2.5rem; height: 2.5rem; }
       .hero { padding: 2.5rem 0 2.7rem; gap: 1.8rem; }
+      .platforms { gap: 0.45rem 0.55rem; }
+      .platforms > li + li { padding-inline-start: 0.55rem; }
       .actions { align-items: stretch; flex-direction: column; }
       .web-action, .secondary-action { width: 100%; }
       .about { grid-template-columns: minmax(0, 1fr); }
@@ -665,6 +705,28 @@
             <img src="assets/casasense-icon-192.png" alt="" width="192" height="192">
             <span><strong>CasaSense -</strong> Your home has a lot to tell you.</span>
           </h1>
+          <ul class="platforms" role="list" aria-label="CasaSense availability">
+            <li>
+              <a class="platform" href="https://casasense.sidecar360.com/">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>
+                </svg>
+                <span>Web</span>
+              </a>
+            </li>
+            <li>
+              <span class="platform">
+                <img src="assets/platform-apple.svg" alt="" width="24" height="24">
+                <span>App Store<small>Coming soon</small></span>
+              </span>
+            </li>
+            <li>
+              <span class="platform">
+                <img src="assets/platform-google-play.svg" alt="" width="24" height="24">
+                <span>Google Play<small>Coming soon</small></span>
+              </span>
+            </li>
+          </ul>
           <ul class="hero-features" role="list">
             <li><span class="feature-check" aria-hidden="true">✓</span><span>Photograph an appliance or scan its label to save model and serial numbers.</span></li>
             <li><span class="feature-check" aria-hidden="true">✓</span><span>Track appliance age and warranty details.</span></li>
@@ -676,7 +738,6 @@
             <a class="web-action" href="https://casasense.sidecar360.com/">Try CasaSense (Web)</a>
             <a class="secondary-action" href="#how-it-works">See how it works</a>
           </div>
-          <p class="store-availability">Coming soon to the App Store and Google Play.</p>
         </div>
 
         <div class="product-visual">
