@@ -62,7 +62,6 @@
       --brand: #087b64;
       --brand-dark: #05604e;
       --brand-soft: #dcefe8;
-      --sidecar-purple: #6d3bc3;
       --paper: #f7fbf9;
       --paper-blue: #f1f5ff;
       --surface: #ffffff;
@@ -100,49 +99,6 @@
       justify-content: space-between;
       gap: 1.75rem;
       border-bottom: 1px solid var(--line);
-    }
-
-    .wordmark {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font: 700 1.3rem/1 "Manrope", sans-serif;
-      letter-spacing: -0.04em;
-      white-space: nowrap;
-    }
-
-    .sidecar-mark-wrap {
-      width: 2.75rem;
-      height: 2.75rem;
-      display: grid;
-      place-items: center;
-      flex: none;
-      overflow: hidden;
-      border: 1px solid rgba(109, 59, 195, 0.14);
-      border-radius: 0.85rem;
-      background: rgba(255, 255, 255, 0.78);
-      box-shadow: 0 0.5rem 1.25rem rgba(61, 31, 112, 0.09);
-    }
-
-    .sidecar-mark {
-      width: 2.9rem;
-      height: 2.9rem;
-      display: block;
-      object-fit: contain;
-      transform: scale(1.25);
-    }
-
-    .wordmark-text {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 0.28rem;
-    }
-
-    .wordmark-sidecar { color: var(--ink); }
-
-    .wordmark-apps {
-      color: var(--sidecar-purple);
-      font-weight: 700;
     }
 
     .site-nav {
@@ -595,6 +551,7 @@
     .footer-brand img {
       width: 2rem;
       height: 2rem;
+      flex: none;
       object-fit: contain;
     }
 
@@ -619,9 +576,6 @@
       .site-header { min-height: 4.4rem; gap: 0.75rem; }
       .site-nav { gap: 0.75rem; font-size: 0.82rem; }
       .site-nav > a:not(.app-link, .about-link) { display: none; }
-      .wordmark { font-size: 1.1rem; }
-      .sidecar-mark-wrap { width: 2.35rem; height: 2.35rem; border-radius: 0.7rem; }
-      .sidecar-mark { width: 2.5rem; height: 2.5rem; }
       .hero { padding: 2.5rem 0 2.7rem; gap: 1.8rem; }
       .hero-tagline { flex-basis: 100%; }
       .platforms { gap: 0.45rem 0.55rem; }
@@ -637,17 +591,20 @@
       .web-action, .secondary-action { transition: none; }
     }
   </style>
+  <link rel="stylesheet" href="sample-home.css">
+  <link rel="stylesheet" href="sidecar-brand.css">
+  <script src="sample-home.js" defer></script>
 </head>
 <body>
   <div class="page-shell">
     <header class="site-header">
       <a class="wordmark" href="#top" aria-label="Sidecar Apps home">
         <span class="sidecar-mark-wrap"><img class="sidecar-mark" src="assets/sidecar-icon-192.png" alt="" width="192" height="184"></span>
-        <span class="wordmark-text"><span class="wordmark-sidecar">sidecar</span><span class="wordmark-apps">apps</span></span>
+        <span>Sidecar <span class="wordmark-apps">Apps</span></span>
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <a class="app-link" href="#casasense">CasaSense</a>
-        <a href="#how-ai-helps">How AI helps</a>
+        <a href="#how-it-works">How it works</a>
         <a class="about-link" href="#about">About</a>
       </nav>
     </header>
@@ -690,7 +647,7 @@
           </ul>
           <div class="actions">
             <a class="web-action" href="https://casasense.sidecar360.com/">Try CasaSense (Web)</a>
-            <a class="secondary-action" href="#how-it-works">See how it works</a>
+            <a class="secondary-action" href="#sample-home">Explore a sample home</a>
           </div>
         </div>
 
@@ -701,6 +658,34 @@
             <source src="assets/casasense-demo.mp4" type="video/mp4">
             <a href="assets/casasense-demo.mp4">Watch the CasaSense demo</a>
           </video>
+        </div>
+      </section>
+
+      <section class="sample-home" id="sample-home" aria-labelledby="sample-heading">
+        <h2 id="sample-heading">Explore a sample home</h2>
+        <p>Pick an appliance to see what you’d have handy if something broke.</p>
+        <div class="sample-layout">
+          <ul class="sample-items" role="list" aria-label="Sample appliances">
+            <li><button type="button" data-sample="waterHeater" aria-pressed="true" aria-controls="sample-record"><strong>Water heater</strong><small>Garage</small></button></li>
+            <li><button type="button" data-sample="refrigerator" aria-pressed="false" aria-controls="sample-record"><strong>Refrigerator</strong><small>Kitchen</small></button></li>
+          </ul>
+          <article class="sample-record" id="sample-record" aria-labelledby="sample-name">
+            <img class="sample-photo" id="sample-photo" src="assets/sample-water-heater.webp" alt="CasaSense reading the label on a water heater" loading="lazy" width="480" height="506">
+            <div>
+              <h3 id="sample-name" aria-live="polite">Water heater</h3>
+              <p class="sample-location" id="sample-location">Garage</p>
+              <dl class="sample-facts">
+                <div><dt>Installed</dt><dd id="sample-installed">2015</dd></div>
+                <div><dt>Warranty</dt><dd id="sample-warranty">Ended</dd></div>
+                <div><dt>Model number</dt><dd id="sample-model">XE50T10HD50U1</dd></div>
+                <div><dt>Next maintenance</dt><dd id="sample-maintenance">Schedule a service check</dd></div>
+              </dl>
+            </div>
+            <div class="sample-next">
+              <p id="sample-next">Keep the model number handy when you compare replacement options.</p>
+              <a class="web-action" href="https://casasense.sidecar360.com/">Add your first appliance</a>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -755,9 +740,10 @@
       <section class="about" id="about" aria-labelledby="about-heading">
         <h2 id="about-heading">About Sidecar Apps</h2>
         <div>
-          <p class="about-lead">We build consumer apps that use AI on the device and in the cloud to make everyday tasks easier.</p>
-          <p>AI runs on your phone when it can do the work there. The cloud helps when a task needs a more capable model or information from outside the device. Using both helps us keep common tasks fast, send less data, and manage the cost of serving each user.</p>
-          <p>CasaSense is our first app. It turns a photo of an appliance label into a record you can use for maintenance, warranty claims, and repairs. Our goal is to bring that same approach to other everyday tasks where people spend too much time gathering information before they can act.</p>
+          <p class="about-lead">Sidecar Apps is building a family of consumer apps that use on-device and cloud AI to make everyday tasks easier.</p>
+          <p>We use AI on your phone when it can handle the task there. The cloud helps when a task needs more analysis or information from outside the device. This keeps common tasks quick and reduces how much data needs to leave your phone.</p>
+          <p><strong>CasaSense is our first app.</strong> It helps households track their appliances, stay ahead of maintenance, and share the details when something needs fixing.</p>
+          <p class="investor-link"><a href="investors.html">For investors</a></p>
         </div>
       </section>
     </main>
@@ -765,7 +751,7 @@
     <footer class="site-footer">
       <div class="footer-brand">
         <img src="assets/sidecar-icon-192.png" alt="" width="192" height="184">
-        <span><strong>sidecar <span class="wordmark-apps">apps</span></strong> · Thoughtful apps that put AI to useful work.</span>
+        <span><strong>Sidecar <span class="wordmark-apps">Apps</span></strong> · Thoughtful apps that put AI to useful work.</span>
       </div>
       <span>© 2026 Sidecar Apps</span>
     </footer>
