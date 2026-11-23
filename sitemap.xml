@@ -5,13 +5,18 @@
     <loc>https://sidecar360.com/</loc>
     <lastmod>2026-11-23</lastmod>
     <image:image>
-      <image:loc>https://sidecar360.com/assets/casasense-health.jpg</image:loc>
-      <image:title>CasaSense appliance health record</image:title>
+      <image:loc>https://sidecar360.com/assets/sample-water-heater.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://sidecar360.com/assets/casasense-demo-poster.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://sidecar360.com/investors.html</loc>
     <lastmod>2026-11-23</lastmod>
+    <image:image>
+      <image:loc>https://sidecar360.com/assets/sample-water-heater.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://sidecar360.com/about.html</loc>

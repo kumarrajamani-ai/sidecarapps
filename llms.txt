@@ -1,29 +1,26 @@
 # Sidecar Apps
 
-> Sidecar Apps builds focused applications that use AI to make everyday tasks easier to understand and act on.
+> Sidecar Apps builds consumer apps that use on-device and cloud AI for everyday tasks. CasaSense, its first app, helps homeowners and landlords build a home appliance inventory and stay on top of maintenance.
 
-Canonical website: https://sidecar360.com/
+CasaSense is available on the web. Photograph an appliance or scan its label to save its model and serial numbers. Keep track of appliance age and warranty details, get maintenance reminders, check recalls, and compare replacement options.
 
-## Current product
+Customers own their appliance records and choose which details to share. They can share records with family, renters, contractors, home warranty companies, and appliance sellers when requesting service or comparing replacements.
 
-- [CasaSense](https://casasense.sidecar360.com/): A home intelligence application that helps people identify and organize appliances, understand age and maintenance needs, review recalls, plan repairs or replacements, and share a home inventory with family members.
+CasaSense can read a label on the phone and send only the extracted text when it can read it clearly. When the label needs a closer look, CasaSense can use online recognition. Recent records can be opened offline, and changes sync after reconnecting.
 
-CasaSense is currently in testing and is not yet listed in the public app stores.
+## CasaSense
 
-## How Sidecar Apps uses AI
+- [CasaSense overview](https://sidecar360.com/)
+- [Open the CasaSense web app](https://casasense.sidecar360.com/)
+- [Try a sample appliance record](https://sidecar360.com/#sample-home)
+- [See how CasaSense works](https://sidecar360.com/#how-it-works)
+- [CasaSense help and feedback](https://casasense.sidecar360.com/support/)
+- [CasaSense privacy policy](https://casasense.sidecar360.com/privacy/)
+- [CasaSense terms of use](https://casasense.sidecar360.com/terms/)
 
-- Photos and equipment labels can be analyzed to reduce manual data entry.
-- Extracted details include their source and confidence so people can review uncertain information.
-- Home and appliance context is organized into practical maintenance, repair, recall, warranty, and replacement actions.
-- Users choose what to save, share, or send to a contractor.
-- Sidecar Apps does not represent an AI estimate as an inspection, warranty decision, recall determination, or contractor quote.
+## Sidecar Apps
 
-## Key links
-
-- [Sidecar Apps home](https://sidecar360.com/)
-- [Try CasaSense on the web](https://casasense.sidecar360.com/)
-- [Sitemap](https://sidecar360.com/sitemap.xml)
-
-## Publisher
-
-Sidecar Apps is the publisher of CasaSense.
+- [About Sidecar Apps](https://sidecar360.com/about.html)
+- [Sidecar Apps investor overview](https://sidecar360.com/investors.html)
+- [Contact Sidecar Apps](https://sidecar360.com/contact.html)
+- [Site sitemap](https://sidecar360.com/sitemap.xml)

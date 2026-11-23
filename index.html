@@ -3,22 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Sidecar Apps — Useful AI for everyday life</title>
-  <meta name="description" content="Sidecar Apps puts AI to work on everyday tasks. Meet CasaSense: photograph an appliance, understand its story, and know what to do next.">
+  <title>CasaSense Appliance Inventory &amp; Maintenance | Sidecar Apps</title>
+  <meta name="description" content="Scan appliance labels, track age and warranties, check recalls, and share records with CasaSense, the home appliance inventory app from Sidecar Apps.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="application-name" content="Sidecar Apps">
   <meta name="theme-color" content="#eff9f5">
-  <meta property="og:title" content="Sidecar Apps — Useful AI for everyday life">
-  <meta property="og:description" content="Useful answers. Clear sources. You stay in control.">
+  <meta property="og:title" content="CasaSense Appliance Inventory &amp; Maintenance | Sidecar Apps">
+  <meta property="og:description" content="Scan appliance labels, track age and warranties, check recalls, and share records with CasaSense, the home appliance inventory app from Sidecar Apps.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sidecar360.com/">
-  <meta property="og:image" content="https://sidecar360.com/assets/casasense-health.jpg">
-  <meta property="og:image:alt" content="CasaSense showing the health record for a home water heater">
+  <meta property="og:image" content="https://sidecar360.com/assets/casasense-share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="CasaSense by Sidecar Apps, with an example water heater record">
   <meta property="og:site_name" content="Sidecar Apps">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sidecar Apps — Useful AI for everyday life">
-  <meta name="twitter:description" content="Useful answers. Clear sources. You stay in control.">
-  <meta name="twitter:image" content="https://sidecar360.com/assets/casasense-health.jpg">
+  <meta name="twitter:title" content="CasaSense Appliance Inventory &amp; Maintenance | Sidecar Apps">
+  <meta name="twitter:description" content="Scan appliance labels, track age and warranties, check recalls, and share records with CasaSense, the home appliance inventory app from Sidecar Apps.">
+  <meta name="twitter:image" content="https://sidecar360.com/assets/casasense-share.jpg">
+  <meta name="twitter:image:alt" content="CasaSense by Sidecar Apps, with an example water heater record">
   <link rel="canonical" href="https://sidecar360.com/">
   <link rel="icon" href="assets/sidecar-icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +35,6 @@
         "@type": "Organization",
         "@id": "https://sidecar360.com/#organization",
         "name": "Sidecar Apps",
-        "alternateName": "Sidecar",
         "url": "https://sidecar360.com/",
         "logo": {
           "@type": "ImageObject",
@@ -40,16 +42,46 @@
           "width": 192,
           "height": 184
         },
-        "description": "Sidecar Apps builds focused applications that use AI to make everyday tasks easier to understand and act on."
+        "description": "Sidecar Apps builds consumer applications that use on-device and cloud AI to help with everyday tasks.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "general inquiries",
+          "url": "https://sidecar360.com/contact.html"
+        }
       },
       {
         "@type": "WebSite",
         "@id": "https://sidecar360.com/#website",
         "url": "https://sidecar360.com/",
         "name": "Sidecar Apps",
-        "alternateName": "Sidecar",
         "publisher": { "@id": "https://sidecar360.com/#organization" },
         "inLanguage": "en-US"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://sidecar360.com/#webpage",
+        "url": "https://sidecar360.com/",
+        "name": "CasaSense Appliance Inventory & Maintenance | Sidecar Apps",
+        "isPartOf": { "@id": "https://sidecar360.com/#website" },
+        "mainEntity": { "@id": "https://casasense.sidecar360.com/#application" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://casasense.sidecar360.com/#application",
+        "name": "CasaSense",
+        "url": "https://casasense.sidecar360.com/",
+        "description": "A home appliance inventory and maintenance app for homeowners and landlords.",
+        "applicationCategory": "LifestyleApplication",
+        "image": "https://sidecar360.com/assets/casasense-share.jpg",
+        "publisher": { "@id": "https://sidecar360.com/#organization" },
+        "featureList": [
+          "Scan appliance labels to save model and serial numbers",
+          "Track appliance age and warranty details",
+          "Get maintenance reminders and recall checks",
+          "Compare replacement options",
+          "Share appliance records"
+        ]
       }
     ]
   }
@@ -186,6 +218,11 @@
       line-height: 1.25;
       letter-spacing: -0.015em;
       text-wrap: balance;
+    }
+
+    .hero-summary {
+      margin: 0;
+      color: var(--ink-soft);
     }
 
     .hero-features {
@@ -596,6 +633,7 @@
         <div id="casasense-overview">
           <div class="hero" id="how-ai-helps">
             <div>
+              <p class="hero-summary">CasaSense is a home appliance inventory and maintenance app for homeowners and landlords.</p>
               <ul class="platforms" role="list" aria-label="CasaSense availability">
                 <li>
                   <a class="platform" href="https://casasense.sidecar360.com/">
