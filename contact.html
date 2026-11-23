@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Contact Sidecar Apps</title>
   <meta name="description" content="Send a message to the Sidecar Apps team. No account required.">
   <link rel="canonical" href="https://sidecar360.com/contact.html">
@@ -24,14 +25,10 @@
     input, textarea { width: 100%; padding: 0.65rem 0.8rem; border: 1px solid #8caaa0; border-radius: 0.55rem; color: inherit; font: inherit; font-weight: 400; }
     textarea { resize: vertical; }
     button { min-height: 2.75rem; padding: 0.65rem 1.05rem; border: 0; border-radius: 999px; color: #fff; background: #087b64; font: inherit; font-weight: 700; cursor: pointer; }
-    button:disabled { opacity: 0.65; cursor: default; }
     a:focus-visible, input:focus-visible, textarea:focus-visible, button:focus-visible { outline: 3px solid #5ab79f; outline-offset: 3px; }
     .contact-website { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-    #contact-status:empty { margin: 0; }
-    #contact-status[data-error] { color: #a12b25; }
   </style>
   <link rel="stylesheet" href="sidecar-brand.css?v=2">
-  <script src="contact.js" defer></script>
 </head>
 <body>
   <div class="shell">
@@ -44,7 +41,7 @@
     <main>
       <h1>Contact Sidecar Apps</h1>
       <p>Send a note to the Sidecar Apps team. No CasaSense account required.</p>
-      <form id="contact-form" method="post">
+      <form action="https://formspree.io/f/mppdokld" method="post">
         <label>
           Email for a reply
           <input name="email" type="email" autocomplete="email" maxlength="255" required>
@@ -55,11 +52,9 @@
         </label>
         <label class="contact-website" aria-hidden="true">
           Website
-          <input name="website" type="text" tabindex="-1" autocomplete="off" maxlength="200">
+          <input name="_gotcha" type="text" tabindex="-1" autocomplete="off" maxlength="200">
         </label>
-        <button type="submit" disabled>Send message</button>
-        <p id="contact-status" role="status"></p>
-        <noscript><p>Enable JavaScript to send a message.</p></noscript>
+        <button type="submit">Send message</button>
       </form>
     </main>
   </div>
