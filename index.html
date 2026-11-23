@@ -197,25 +197,37 @@
 
     .hero-title {
       display: flex;
-      align-items: flex-start;
-      gap: 0.8rem;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.42rem 0.8rem;
       margin: 0;
-      font-size: clamp(2rem, 4.1vw, 3.55rem);
-      font-weight: 700;
-      line-height: 1.06;
-      letter-spacing: -0.05em;
     }
 
-    .hero-title img {
-      width: clamp(2.55rem, 5vw, 3.6rem);
+    .hero-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: clamp(2rem, 3.4vw, 2.45rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+      white-space: nowrap;
+    }
+
+    .hero-brand img {
+      width: clamp(2.45rem, 4.2vw, 2.9rem);
       height: auto;
       flex: none;
-      border-radius: 0.8rem;
+      border-radius: 0.75rem;
     }
 
-    .hero-title strong {
-      font-weight: inherit;
-      white-space: nowrap;
+    .hero-tagline {
+      font-size: clamp(1rem, 1.5vw, 1.08rem);
+      color: var(--ink-soft);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      text-wrap: balance;
     }
 
     .hero-features {
@@ -611,6 +623,7 @@
       .sidecar-mark-wrap { width: 2.35rem; height: 2.35rem; border-radius: 0.7rem; }
       .sidecar-mark { width: 2.5rem; height: 2.5rem; }
       .hero { padding: 2.5rem 0 2.7rem; gap: 1.8rem; }
+      .hero-tagline { flex-basis: 100%; }
       .platforms { gap: 0.45rem 0.55rem; }
       .platforms > li + li { padding-inline-start: 0.55rem; }
       .actions { align-items: stretch; flex-direction: column; }
@@ -643,8 +656,8 @@
       <section class="hero" id="how-ai-helps">
         <div class="hero-intro" id="casasense">
           <h1 class="hero-title">
-            <img src="assets/casasense-icon-192.png" alt="" width="192" height="192">
-            <span><strong>CasaSense -</strong> Your home has a lot to tell you.</span>
+            <span class="hero-brand"><img src="assets/casasense-icon-192.png" alt="" width="192" height="192">CasaSense</span>
+            <span class="hero-tagline">Your home has a lot to tell you.</span>
           </h1>
           <ul class="platforms" role="list" aria-label="CasaSense availability">
             <li>
