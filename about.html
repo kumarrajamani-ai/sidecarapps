@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Sidecar Apps | CasaSense, Investors &amp; Partners</title>
-  <meta name="description" content="Meet Sidecar Apps, the team behind CasaSense. Learn how we use on-device and cloud AI, and contact us about OEM partnerships and corporate venture investment.">
+  <title>About Sidecar Apps | Vision, Investors &amp; Partners</title>
+  <meta name="description" content="Sidecar Apps builds consumer apps with on-device and cloud AI. Learn about our vision, OEM partnerships, and corporate venture investment.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sidecar Apps">
-  <meta property="og:title" content="About Sidecar Apps | CasaSense, Investors &amp; Partners">
-  <meta property="og:description" content="Meet Sidecar Apps, the team behind CasaSense. Learn how we use on-device and cloud AI, and contact us about OEM partnerships and corporate venture investment.">
+  <meta property="og:title" content="About Sidecar Apps | Vision, Investors &amp; Partners">
+  <meta property="og:description" content="Sidecar Apps builds consumer apps with on-device and cloud AI. Learn about our vision, OEM partnerships, and corporate venture investment.">
   <meta property="og:url" content="https://sidecar360.com/about.html">
   <meta property="og:image" content="https://sidecar360.com/assets/sidecar-icon.png">
   <meta property="og:image:alt" content="Sidecar Apps logo">
@@ -40,36 +40,30 @@
     nav a { display: inline-flex; align-items: center; min-height: 2.75rem; text-decoration: none; }
     nav [aria-current] { font-weight: 700; }
     main { max-width: 65rem; margin-inline: auto; padding: clamp(2rem, 5vw, 4rem) 0; }
-    h1, h2 { margin: 0; font-family: Manrope, sans-serif; line-height: 1.18; letter-spacing: -0.035em; }
+    h1, h2, h3 { margin: 0; font-family: Manrope, sans-serif; line-height: 1.18; letter-spacing: -0.035em; }
     h1 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
     h2 { font-size: clamp(1.45rem, 3vw, 2.05rem); }
+    h3 { font-size: 1.08rem; }
     p { margin: 0.75rem 0 0; color: #49675c; }
     .about-intro { max-width: 42rem; }
     .lead { font-size: clamp(1.13rem, 2.3vw, 1.4rem); font-weight: 700; color: #12372e; line-height: 1.45; }
     .intro-links { display: flex; flex-wrap: wrap; gap: 0.25rem 1.65rem; margin-top: 1rem; }
     main a { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; color: #05604e; font-weight: 700; text-underline-offset: 0.23em; }
     .about-jump { gap: 0.4rem; }
-    .first-app {
-      display: grid;
-      grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.8fr);
-      align-items: center;
-      gap: clamp(1.25rem, 4vw, 3.25rem);
+    .approach {
       margin-top: clamp(1.5rem, 5vw, 3.25rem);
       padding: clamp(1.25rem, 4vw, 2.4rem);
       border: 1px solid #cdded7;
       border-radius: 1.25rem;
       background: #fff;
     }
-    .app-heading { display: flex; align-items: center; gap: 0.75rem; }
-    .app-icon { width: 2.75rem; height: auto; flex: none; border-radius: 0.65rem; }
-    .app-photo {
-      display: block;
-      width: 100%;
-      max-width: 24rem;
-      height: auto;
-      border-radius: 0.9rem;
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem 1.75rem;
+      margin-top: 1.25rem;
     }
-    .first-app a { margin-top: 0.8rem; }
+    .approach-grid p { margin-top: 0.45rem; }
     .investors {
       margin-top: clamp(1.35rem, 4vw, 2.5rem);
       padding: clamp(1.25rem, 4.5vw, 2.5rem);
@@ -92,7 +86,9 @@
     @media (max-width: 42rem) {
       header { gap: 0.75rem; }
       nav { font-size: 0.82rem; }
-      .first-app { grid-template-columns: minmax(0, 1fr); }
+      .intro-links { column-gap: 1rem; }
+      .approach-grid { grid-template-columns: minmax(0, 1fr); }
+      .approach-grid > div + div { padding-top: 1rem; border-top: 1px solid #cdded7; }
     }
   </style>
   <link rel="stylesheet" href="sidecar-brand.css?v=2">
@@ -112,31 +108,35 @@
     <main>
       <section class="about-intro" aria-labelledby="about-heading">
         <h1 id="about-heading">About Sidecar Apps</h1>
-        <p class="lead">We build consumer apps that use AI to make everyday tasks easier.</p>
-        <p>Our apps handle tasks like reading a photo on your phone when they can. The cloud helps when a task needs more analysis or outside information. That keeps common tasks quick and reduces how much data needs to leave your phone.</p>
+        <p class="lead">We’re building a family of consumer apps that help people handle everyday tasks with less manual work.</p>
+        <p>We start with moments when people spend more time finding, typing, or sorting through information than acting on it. We use AI to handle that work so people can get to the decision they came to make.</p>
         <div class="intro-links">
           <a class="about-jump" href="#investors">Investors and partners <span aria-hidden="true">↓</span></a>
           <a href="contact.html">Contact us</a>
         </div>
       </section>
 
-      <section class="first-app" aria-labelledby="first-app-heading">
-        <div>
-          <div class="app-heading">
-            <img class="app-icon" src="assets/casasense-icon-192.png" alt="" width="192" height="192">
-            <h2 id="first-app-heading">CasaSense is our first app</h2>
+      <section class="approach" aria-labelledby="approach-heading">
+        <h2 id="approach-heading">How we build</h2>
+        <div class="approach-grid">
+          <div>
+            <h3>On your device</h3>
+            <p>We handle routine tasks like reading text from a photo on your device when possible. That helps keep common tasks quick and reduces how much data has to leave your device.</p>
           </div>
-          <p>CasaSense helps homeowners and landlords keep an appliance inventory, stay on top of maintenance, and share the details when something needs fixing.</p>
-          <p>Our founder wrote the first version on a flight to Bangalore after a water heater broke at their rental and nobody knew how old it was.</p>
-          <a href="./#sample-home">Explore a sample appliance record</a>
+          <div>
+            <h3>In the cloud</h3>
+            <p>We use the cloud when a task needs more analysis or information the device doesn’t have.</p>
+          </div>
+          <div>
+            <h3>You decide what to share</h3>
+            <p>We design our apps so people can review important details and decide what to save or share.</p>
+          </div>
         </div>
-        <img class="app-photo" src="assets/sample-water-heater.webp" alt="CasaSense reading the model number on a water heater label" width="480" height="506">
       </section>
 
       <section class="investors" id="investors" aria-labelledby="investor-heading" tabindex="-1">
         <h2 id="investor-heading">Investors and partners</h2>
-        <p>Each Sidecar app starts with a specific task people already spend time on. Handling routine tasks on the device reduces cloud requests and helps control the cost of serving each user.</p>
-        <p>If you’re an appliance manufacturer (OEM) or a corporate venture capital team, contact us to discuss partnerships or investing in Sidecar Apps.</p>
+        <p>We welcome conversations with original equipment manufacturers (OEMs) about building better experiences around their products. We’d also like to hear from corporate venture capital teams and other investors interested in bringing practical consumer AI apps to more people.</p>
         <a class="contact" href="contact.html">Contact Sidecar Apps</a>
       </section>
     </main>
