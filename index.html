@@ -638,14 +638,32 @@
 
     .product-band {
       margin: 1.25rem 0 2.25rem;
-      padding: 1.55rem 1.75rem;
-      display: flex;
+      padding: clamp(1.25rem, 4vw, 2.75rem);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 18rem);
       align-items: center;
-      justify-content: space-between;
-      gap: 1.7rem;
+      gap: clamp(1.25rem, 5vw, 4.5rem);
       border-radius: 1.45rem;
       background: #103f34;
       color: #ffffff;
+      scroll-margin-top: 1.5rem;
+    }
+
+    .product-band-content {
+      display: grid;
+      justify-items: start;
+      gap: 1rem;
+    }
+
+    .product-band-video {
+      display: block;
+      width: 100%;
+      max-width: 18rem;
+      height: auto;
+      aspect-ratio: 9 / 16;
+      justify-self: center;
+      border-radius: 0.95rem;
+      background: #092b23;
     }
 
     .product-band-copy {
@@ -756,7 +774,7 @@
       .phone { width: 17.4rem; height: 35.6rem; }
       .app-pill { left: 0; }
       .ai-card { right: 0; bottom: 1.75rem; }
-      .product-band { align-items: flex-start; flex-direction: column; }
+      .product-band { grid-template-columns: minmax(0, 1fr); }
       .band-action { width: 100%; }
       .site-footer { align-items: flex-start; flex-direction: column; }
     }
@@ -900,14 +918,21 @@
       </section>
 
       <section class="product-band" id="casasense" aria-labelledby="casasense-heading">
-        <div class="product-band-copy">
-          <img src="assets/casasense-icon-192.png" alt="CasaSense app icon" width="192" height="192">
-          <div>
-            <h2 id="casasense-heading">Start with CasaSense</h2>
-            <p>In testing. Photograph an appliance, understand its story and know what to do next.</p>
+        <div class="product-band-content">
+          <div class="product-band-copy">
+            <img src="assets/casasense-icon-192.png" alt="" width="192" height="192">
+            <div>
+              <h2 id="casasense-heading">See CasaSense in action</h2>
+              <p>Watch the 30-second demo to see how to scan an appliance label, compare replacements, and keep up with reminders.</p>
+            </div>
           </div>
+          <a class="band-action" href="https://casasense.sidecar360.com">Open CasaSense</a>
         </div>
-        <a class="band-action" href="https://casasense.sidecar360.com">Open CasaSense</a>
+        <video class="product-band-video" controls playsinline preload="none" width="720" height="1280"
+               poster="assets/casasense-demo-poster.webp" aria-label="CasaSense product demo, 30 seconds">
+          <source src="assets/casasense-demo.mp4" type="video/mp4">
+          <a href="assets/casasense-demo.mp4">Watch the CasaSense demo</a>
+        </video>
       </section>
     </main>
 
