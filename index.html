@@ -132,7 +132,7 @@
     }
 
     .hero {
-      padding: 3.9rem 0 3.2rem;
+      padding: 0.85rem 0 3.2rem;
       display: grid;
       grid-template-columns: minmax(0, 0.92fr) minmax(26rem, 1.08fr);
       gap: clamp(1.75rem, 4vw, 3rem) 3.5rem;
@@ -149,7 +149,10 @@
       text-wrap: balance;
     }
 
-    .hero-intro { scroll-margin-top: 1.5rem; }
+    .casasense {
+      padding-top: clamp(2.25rem, 5vw, 3.5rem);
+      scroll-margin-top: 1.5rem;
+    }
 
     .hero-title {
       display: flex;
@@ -499,38 +502,6 @@
       .flow-service strong, .flow-service span { font-size: 1rem; }
     }
 
-    .about {
-      display: grid;
-      grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
-      gap: 1.25rem 3rem;
-      padding: 2.75rem 0 3rem;
-      border-top: 1px solid var(--line);
-      scroll-margin-top: 1.5rem;
-    }
-
-    .about h2 {
-      margin: 0;
-      font-size: clamp(1.9rem, 4vw, 2.7rem);
-      line-height: 1.15;
-      letter-spacing: -0.045em;
-    }
-
-    .about p {
-      margin: 0;
-      color: var(--ink-soft);
-      font-size: 1rem;
-      line-height: 1.65;
-    }
-
-    .about p + p { margin-top: 0.9rem; }
-
-    .about .about-lead {
-      color: var(--ink);
-      font-weight: 700;
-      font-size: 1.2rem;
-      line-height: 1.45;
-    }
-
     .site-footer {
       padding: 1.4rem 0 2rem;
       display: flex;
@@ -575,14 +546,12 @@
       .page-shell { padding: 0 1.25rem; }
       .site-header { min-height: 4.4rem; gap: 0.75rem; }
       .site-nav { gap: 0.75rem; font-size: 0.82rem; }
-      .site-nav > a:not(.app-link, .about-link) { display: none; }
-      .hero { padding: 2.5rem 0 2.7rem; gap: 1.8rem; }
+      .hero { padding-bottom: 2.7rem; gap: 1.8rem; }
       .hero-tagline { flex-basis: 100%; }
       .platforms { gap: 0.45rem 0.55rem; }
       .platforms > li + li { padding-inline-start: 0.55rem; }
       .actions { align-items: stretch; flex-direction: column; }
       .web-action, .secondary-action { width: 100%; }
-      .about { grid-template-columns: minmax(0, 1fr); }
       .site-footer { align-items: flex-start; flex-direction: column; }
     }
 
@@ -591,9 +560,9 @@
       .web-action, .secondary-action { transition: none; }
     }
   </style>
-  <link rel="stylesheet" href="sample-home.css">
+  <link rel="stylesheet" href="casasense-home.css">
   <link rel="stylesheet" href="sidecar-brand.css?v=2">
-  <script src="sample-home.js" defer></script>
+  <script src="casasense-home.js" defer></script>
 </head>
 <body>
   <div class="page-shell">
@@ -604,147 +573,144 @@
       </a>
       <nav class="site-nav" aria-label="Main navigation">
         <a class="app-link" href="#casasense">CasaSense</a>
-        <a href="#how-it-works">How it works</a>
-        <a class="about-link" href="#about">About</a>
+        <a class="about-link" href="about.html">About</a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero" id="how-ai-helps">
-        <div class="hero-intro" id="casasense">
-          <h1 class="hero-title">
-            <span class="hero-brand"><img src="assets/casasense-icon-192.png" alt="" width="192" height="192">CasaSense</span>
-            <span class="hero-tagline">Your home has a lot to tell you.</span>
-          </h1>
-          <ul class="platforms" role="list" aria-label="CasaSense availability">
-            <li>
-              <a class="platform" href="https://casasense.sidecar360.com/">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
-                  <circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>
-                </svg>
-                <span>Web</span>
-              </a>
-            </li>
-            <li>
-              <span class="platform">
-                <img src="assets/platform-apple.svg" alt="" width="24" height="24">
-                <span>App Store<small>Coming soon</small></span>
-              </span>
-            </li>
-            <li>
-              <span class="platform">
-                <img src="assets/platform-google-play.svg" alt="" width="24" height="24">
-                <span>Google Play<small>Coming soon</small></span>
-              </span>
-            </li>
-          </ul>
-          <ul class="hero-features" role="list">
-            <li><span class="feature-check" aria-hidden="true">✓</span><span>Photograph an appliance or scan its label to save model and serial numbers.</span></li>
-            <li><span class="feature-check" aria-hidden="true">✓</span><span>Track appliance age and warranty details.</span></li>
-            <li><span class="feature-check" aria-hidden="true">✓</span><span>Get maintenance reminders and recall checks.</span></li>
-            <li><span class="feature-check" aria-hidden="true">✓</span><span>Compare replacement options and plan for costs.</span></li>
-            <li><span class="feature-check" aria-hidden="true">✓</span><span>Share appliance details with family, renters, and contractors.</span></li>
-          </ul>
-          <div class="actions">
-            <a class="web-action" href="https://casasense.sidecar360.com/">Try CasaSense (Web)</a>
-            <a class="secondary-action" href="#sample-home">Explore a sample home</a>
-          </div>
+      <section class="casasense" id="casasense" aria-labelledby="casasense-title">
+        <h1 class="hero-title" id="casasense-title">
+          <span class="hero-brand"><img src="assets/casasense-icon-192.png" alt="" width="192" height="192">CasaSense</span>
+          <span class="hero-tagline">Your home has a lot to tell you.</span>
+        </h1>
+        <div class="casasense-tabs" id="casasense-tabs" role="tablist" aria-label="CasaSense" hidden>
+          <button id="overview-tab" type="button" role="tab" aria-selected="true" aria-controls="casasense-overview">Overview</button>
+          <button id="how-it-works-tab" type="button" role="tab" aria-selected="false" aria-controls="how-it-works" tabindex="-1">See how it works</button>
         </div>
-
-        <div class="product-visual">
-          <div class="orb" aria-hidden="true"></div>
-          <video class="hero-video" id="casasense-demo" controls playsinline muted loop preload="none" width="720" height="1280"
-                 poster="assets/casasense-demo-poster.webp" aria-label="CasaSense product demo, 30 seconds">
-            <source src="assets/casasense-demo.mp4" type="video/mp4">
-            <a href="assets/casasense-demo.mp4">Watch the CasaSense demo</a>
-          </video>
-        </div>
-      </section>
-
-      <section class="sample-home" id="sample-home" aria-labelledby="sample-heading">
-        <h2 id="sample-heading">Explore a sample home</h2>
-        <p>Pick an appliance to see what you’d have handy if something broke.</p>
-        <div class="sample-layout">
-          <ul class="sample-items" role="list" aria-label="Sample appliances">
-            <li><button type="button" data-sample="waterHeater" aria-pressed="true" aria-controls="sample-record"><strong>Water heater</strong><small>Garage</small></button></li>
-            <li><button type="button" data-sample="refrigerator" aria-pressed="false" aria-controls="sample-record"><strong>Refrigerator</strong><small>Kitchen</small></button></li>
-          </ul>
-          <article class="sample-record" id="sample-record" aria-labelledby="sample-name">
-            <img class="sample-photo" id="sample-photo" src="assets/sample-water-heater.webp" alt="CasaSense reading the label on a water heater" loading="lazy" width="480" height="506">
+        <div id="casasense-overview">
+          <div class="hero" id="how-ai-helps">
             <div>
-              <h3 id="sample-name" aria-live="polite">Water heater</h3>
-              <p class="sample-location" id="sample-location">Garage</p>
-              <dl class="sample-facts">
-                <div><dt>Installed</dt><dd id="sample-installed">2015</dd></div>
-                <div><dt>Warranty</dt><dd id="sample-warranty">Ended</dd></div>
-                <div><dt>Model number</dt><dd id="sample-model">XE50T10HD50U1</dd></div>
-                <div><dt>Next maintenance</dt><dd id="sample-maintenance">Schedule a service check</dd></div>
-              </dl>
+              <ul class="platforms" role="list" aria-label="CasaSense availability">
+                <li>
+                  <a class="platform" href="https://casasense.sidecar360.com/">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                      <circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>
+                    </svg>
+                    <span>Web</span>
+                  </a>
+                </li>
+                <li>
+                  <span class="platform">
+                    <img src="assets/platform-apple.svg" alt="" width="24" height="24">
+                    <span>App Store<small>Coming soon</small></span>
+                  </span>
+                </li>
+                <li>
+                  <span class="platform">
+                    <img src="assets/platform-google-play.svg" alt="" width="24" height="24">
+                    <span>Google Play<small>Coming soon</small></span>
+                  </span>
+                </li>
+              </ul>
+              <ul class="hero-features" role="list">
+                <li><span class="feature-check" aria-hidden="true">✓</span><span>Photograph an appliance or scan its label to save model and serial numbers.</span></li>
+                <li><span class="feature-check" aria-hidden="true">✓</span><span>Track appliance age and warranty details.</span></li>
+                <li><span class="feature-check" aria-hidden="true">✓</span><span>Get maintenance reminders and recall checks.</span></li>
+                <li><span class="feature-check" aria-hidden="true">✓</span><span>Compare replacement options and plan for costs.</span></li>
+                <li><span class="feature-check" aria-hidden="true">✓</span><span>Share appliance details with family, renters, and contractors.</span></li>
+              </ul>
+              <div class="actions">
+                <a class="web-action" href="https://casasense.sidecar360.com/">Try CasaSense (Web)</a>
+                <a class="secondary-action" href="#sample-home">Explore a sample home</a>
+              </div>
             </div>
-            <div class="sample-next">
-              <p id="sample-next">Keep the model number handy when you compare replacement options.</p>
-              <a class="web-action" href="https://casasense.sidecar360.com/">Add your first appliance</a>
-            </div>
-          </article>
-        </div>
-      </section>
 
-      <section class="how-it-works" id="how-it-works" aria-labelledby="how-it-works-heading">
-        <h2 id="how-it-works-heading">See how it works</h2>
-        <ol class="app-flow" role="list">
-          <li class="flow-stage flow-stage--phone">
-            <div class="flow-visual">
-              <div class="flow-art flow-art--phone" role="img" aria-label="CasaSense showing the brand, model and serial number it read from an appliance label"></div>
+            <div class="product-visual">
+              <div class="orb" aria-hidden="true"></div>
+              <video class="hero-video" id="casasense-demo" controls playsinline muted loop preload="none" width="720" height="1280"
+                     poster="assets/casasense-demo-poster.webp" aria-label="CasaSense product demo, 30 seconds">
+                <source src="assets/casasense-demo.mp4" type="video/mp4">
+                <a href="assets/casasense-demo.mp4">Watch the CasaSense demo</a>
+              </video>
             </div>
-            <div class="flow-copy">
-              <h3>AI on your phone</h3>
-              <p>Your phone reads the model and serial number from the label so you can check them before saving.</p>
-              <p>You can open recent records offline. Edits sync when you reconnect.</p>
-            </div>
-          </li>
-          <li class="flow-stage flow-stage--sync">
-            <div class="flow-visual">
-              <div class="flow-art flow-art--sync" aria-hidden="true"></div>
-            </div>
-            <div class="flow-copy">
-              <h3>Secure sync</h3>
-              <p>CasaSense can send just the text from a readable label. When it needs a closer look, it sends the photo for online recognition.</p>
-            </div>
-          </li>
-          <li class="flow-stage flow-stage--cloud">
-            <div class="flow-visual">
-              <div class="flow-art flow-art--cloud" aria-hidden="true"></div>
-            </div>
-            <div class="flow-copy">
-              <h3>Home records and services</h3>
-              <p>CasaSense saves your records online and uses these services when needed.</p>
-            </div>
-            <ul class="flow-services" role="list">
-              <li class="flow-service">
-                <div class="flow-art flow-art--gemini" aria-hidden="true"></div>
-                <div><strong>Gemini</strong><span>Enhanced recognition</span></div>
-              </li>
-              <li class="flow-service">
-                <div class="flow-art flow-art--email" aria-hidden="true"></div>
-                <div><strong>Email Delivery</strong><span>Account and invite emails</span></div>
-              </li>
-              <li class="flow-service">
-                <div class="flow-art flow-art--map" aria-hidden="true"></div>
-                <div><strong>Geoapify</strong><span>Address lookup</span></div>
-              </li>
-            </ul>
-          </li>
-        </ol>
-      </section>
+          </div>
 
-      <section class="about" id="about" aria-labelledby="about-heading">
-        <h2 id="about-heading">About Sidecar Apps</h2>
-        <div>
-          <p class="about-lead">Sidecar Apps is building a family of consumer apps that use on-device and cloud AI to make everyday tasks easier.</p>
-          <p>We use AI on your phone when it can handle the task there. The cloud helps when a task needs more analysis or information from outside the device. This keeps common tasks quick and reduces how much data needs to leave your phone.</p>
-          <p><strong>CasaSense is our first app.</strong> It helps households track their appliances, stay ahead of maintenance, and share the details when something needs fixing.</p>
-          <p class="investor-link"><a href="investors.html">For investors</a></p>
+          <section class="sample-home" id="sample-home" aria-labelledby="sample-heading">
+            <h2 id="sample-heading">Explore a sample home</h2>
+            <p>Pick an appliance to see what you’d have handy if something broke.</p>
+            <div class="sample-layout">
+              <ul class="sample-items" role="list" aria-label="Sample appliances">
+                <li><button type="button" data-sample="waterHeater" aria-pressed="true" aria-controls="sample-record"><strong>Water heater</strong><small>Garage</small></button></li>
+                <li><button type="button" data-sample="refrigerator" aria-pressed="false" aria-controls="sample-record"><strong>Refrigerator</strong><small>Kitchen</small></button></li>
+              </ul>
+              <article class="sample-record" id="sample-record" aria-labelledby="sample-name">
+                <img class="sample-photo" id="sample-photo" src="assets/sample-water-heater.webp" alt="CasaSense reading the label on a water heater" loading="lazy" width="480" height="506">
+                <div>
+                  <h3 id="sample-name" aria-live="polite">Water heater</h3>
+                  <p class="sample-location" id="sample-location">Garage</p>
+                  <dl class="sample-facts">
+                    <div><dt>Installed</dt><dd id="sample-installed">2015</dd></div>
+                    <div><dt>Warranty</dt><dd id="sample-warranty">Ended</dd></div>
+                    <div><dt>Model number</dt><dd id="sample-model">XE50T10HD50U1</dd></div>
+                    <div><dt>Next maintenance</dt><dd id="sample-maintenance">Schedule a service check</dd></div>
+                  </dl>
+                </div>
+                <div class="sample-next">
+                  <p id="sample-next">Keep the model number handy when you compare replacement options.</p>
+                  <a class="web-action" href="https://casasense.sidecar360.com/">Add your first appliance</a>
+                </div>
+              </article>
+            </div>
+          </section>
         </div>
+
+        <section class="how-it-works" id="how-it-works" aria-labelledby="how-it-works-heading">
+          <h2 id="how-it-works-heading">From a label photo to a saved record</h2>
+          <ol class="app-flow" role="list">
+            <li class="flow-stage flow-stage--phone">
+              <div class="flow-visual">
+                <div class="flow-art flow-art--phone" role="img" aria-label="CasaSense showing the brand, model and serial number it read from an appliance label"></div>
+              </div>
+              <div class="flow-copy">
+                <h3>AI on your phone</h3>
+                <p>Your phone reads the model and serial number from the label so you can check them before saving.</p>
+                <p>You can open recent records offline.</p>
+              </div>
+            </li>
+            <li class="flow-stage flow-stage--sync">
+              <div class="flow-visual">
+                <div class="flow-art flow-art--sync" aria-hidden="true"></div>
+              </div>
+              <div class="flow-copy">
+                <h3>Sync when you reconnect</h3>
+                <p>Changes sync when you reconnect. CasaSense can send just the text from a readable label, or use the photo when it needs a closer look.</p>
+              </div>
+            </li>
+            <li class="flow-stage flow-stage--cloud">
+              <div class="flow-visual">
+                <div class="flow-art flow-art--cloud" aria-hidden="true"></div>
+              </div>
+              <div class="flow-copy">
+                <h3>Your appliance records</h3>
+                <p>CasaSense saves your records online and uses these services when needed.</p>
+              </div>
+              <ul class="flow-services" role="list">
+                <li class="flow-service">
+                  <div class="flow-art flow-art--gemini" aria-hidden="true"></div>
+                  <div><strong>Gemini</strong><span>Enhanced recognition</span></div>
+                </li>
+                <li class="flow-service">
+                  <div class="flow-art flow-art--email" aria-hidden="true"></div>
+                  <div><strong>Email Delivery</strong><span>Account and invite emails</span></div>
+                </li>
+                <li class="flow-service">
+                  <div class="flow-art flow-art--map" aria-hidden="true"></div>
+                  <div><strong>Geoapify</strong><span>Address lookup</span></div>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </section>
       </section>
     </main>
 
