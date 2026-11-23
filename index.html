@@ -928,7 +928,7 @@
           </div>
           <a class="band-action" href="https://casasense.sidecar360.com">Open CasaSense</a>
         </div>
-        <video class="product-band-video" controls playsinline preload="none" width="720" height="1280"
+        <video class="product-band-video" controls playsinline muted loop preload="none" width="720" height="1280"
                poster="assets/casasense-demo-poster.webp" aria-label="CasaSense product demo, 30 seconds">
           <source src="assets/casasense-demo.mp4" type="video/mp4">
           <a href="assets/casasense-demo.mp4">Watch the CasaSense demo</a>
@@ -944,5 +944,21 @@
       <span>© 2026 Sidecar Apps</span>
     </footer>
   </div>
+  <script>
+    const casaSenseDemo = document.querySelector(".product-band-video");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (!prefersReducedMotion.matches && "IntersectionObserver" in window) {
+      const demoObserver = new IntersectionObserver(([entry]) => {
+        if (entry.intersectionRatio < 0.35) return;
+
+        demoObserver.disconnect();
+        casaSenseDemo.play().catch(() => {
+          // The native Play control remains available if autoplay is blocked.
+        });
+      }, { threshold: 0.35 });
+      demoObserver.observe(casaSenseDemo);
+    }
+  </script>
 </body>
 </html>
