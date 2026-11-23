@@ -415,6 +415,182 @@
       font-weight: 800;
     }
 
+    .how-it-works {
+      padding: 2.75rem 0 3rem;
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 1.5rem;
+    }
+
+    .how-it-works > h2 {
+      margin: 0 0 1.5rem;
+      font: 800 clamp(1.9rem, 4.5vw, 2.7rem)/1.15 "Manrope", sans-serif;
+      letter-spacing: -0.04em;
+    }
+
+    .app-flow {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.76fr) minmax(0, 1.45fr);
+      gap: 1.65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .flow-stage {
+      position: relative;
+      min-width: 0;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 1.25rem;
+      background: var(--surface);
+    }
+
+    .flow-stage:not(:last-child)::after {
+      position: absolute;
+      z-index: 1;
+      top: 7.6rem;
+      left: calc(100% + 0.1rem);
+      width: 1.4rem;
+      height: 0.7rem;
+      background: var(--brand);
+      clip-path: polygon(0 42%, 63% 42%, 63% 0, 100% 50%, 63% 100%, 63% 58%, 0 58%);
+      content: "";
+    }
+
+    .flow-visual {
+      height: 14rem;
+      display: grid;
+      place-items: center;
+      border-radius: 0.8rem;
+      background: #f0f7f2;
+    }
+
+    /* Each crop uses the same artwork from the approved mock. Flow labels remain selectable HTML. */
+    .flow-art {
+      display: block;
+      background: url("assets/casasense-how-it-works.webp") no-repeat;
+    }
+
+    .flow-art--phone {
+      width: min(100%, 10rem);
+      aspect-ratio: 508 / 684;
+      background-size: 302.362% auto;
+      background-position: 0 38.824%;
+    }
+
+    .flow-art--sync {
+      width: min(100%, 6.75rem);
+      aspect-ratio: 176 / 218;
+      background-size: 872.727% auto;
+      background-position: 45% 36.6%;
+    }
+
+    .flow-art--cloud {
+      width: min(100%, 16rem);
+      aspect-ratio: 422 / 350;
+      background-size: 363.981% auto;
+      background-position: 87.074% 25.371%;
+    }
+
+    .flow-art--gemini {
+      aspect-ratio: 205 / 198;
+      background-size: 749.268% auto;
+      background-position: 63.561% 77.724%;
+    }
+
+    .flow-art--email {
+      aspect-ratio: 210 / 198;
+      background-size: 731.429% auto;
+      background-position: 80.769% 77.724%;
+    }
+
+    .flow-art--map {
+      aspect-ratio: 209 / 198;
+      background-size: 734.928% auto;
+      background-position: 97.965% 77.724%;
+    }
+
+    .flow-copy h3 {
+      margin: 0.85rem 0 0.35rem;
+      font: 800 1.2rem/1.25 "Manrope", sans-serif;
+      letter-spacing: -0.025em;
+    }
+
+    .flow-copy p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .flow-copy p + p { margin-top: 0.65rem; }
+
+    .flow-services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.6rem;
+      margin: 0.9rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .flow-service {
+      display: grid;
+      align-content: start;
+      gap: 0.4rem;
+      min-width: 0;
+    }
+
+    .flow-service .flow-art {
+      width: min(100%, 4rem);
+      border-radius: 0.65rem;
+    }
+
+    .flow-service strong {
+      display: block;
+      font: 800 0.9rem/1.25 "Manrope", sans-serif;
+    }
+
+    .flow-service span {
+      display: block;
+      color: var(--ink-soft);
+      font-size: 0.875rem;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 52rem) {
+      .app-flow { grid-template-columns: minmax(0, 1fr); gap: 1.7rem; }
+
+      .flow-stage:not(:last-child)::after {
+        top: auto;
+        bottom: -1.22rem;
+        left: calc(50% - 0.7rem);
+        transform: rotate(90deg);
+      }
+
+      .flow-stage--sync {
+        display: grid;
+        grid-template-columns: minmax(4rem, 0.42fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 0.85rem;
+      }
+
+      .flow-stage--sync .flow-visual { height: auto; min-height: 7rem; }
+      .flow-stage--sync .flow-art { width: min(85%, 5rem); }
+      .flow-stage--sync h3 { margin-top: 0; }
+      .flow-stage--cloud .flow-visual { height: 10.75rem; }
+      .flow-stage--cloud .flow-art--cloud { width: min(100%, 12rem); }
+
+      .flow-services { grid-template-columns: minmax(0, 1fr); }
+      .flow-service {
+        grid-template-columns: 3.5rem minmax(0, 1fr);
+        align-items: center;
+        gap: 0.7rem;
+      }
+
+      .flow-service strong, .flow-service span { font-size: 1rem; }
+    }
+
     .principles {
       padding: 2.5rem 0 1.5rem;
       display: grid;
@@ -614,7 +790,7 @@
           <p class="hero-copy">Sidecar apps use AI to handle the tedious work—reading labels, organizing details and finding the next step—while showing you what it found and when it is uncertain.</p>
           <div class="actions">
             <a class="primary-action" href="https://casasense.sidecar360.com">Try CasaSense</a>
-            <a class="secondary-action" href="#why-trust-us">See how the AI works</a>
+            <a class="secondary-action" href="#how-it-works">See how it works</a>
           </div>
           <div class="trust-line" aria-label="Sidecar AI trust features">
             <span>
@@ -651,6 +827,54 @@
             <div class="ai-row"><span aria-hidden="true">✓</span><div>Turned the record into a clear next step</div></div>
           </div>
         </div>
+      </section>
+
+      <section class="how-it-works" id="how-it-works" aria-labelledby="how-it-works-heading">
+        <h2 id="how-it-works-heading">See how it works</h2>
+        <ol class="app-flow" role="list">
+          <li class="flow-stage flow-stage--phone">
+            <div class="flow-visual">
+              <div class="flow-art flow-art--phone" role="img" aria-label="CasaSense showing the brand, model and serial number it read from an appliance label"></div>
+            </div>
+            <div class="flow-copy">
+              <h3>AI on your phone</h3>
+              <p>On-device OCR reads the model and serial number on appliance labels for you to review.</p>
+              <p>A SQLite cache keeps recent records available offline. Queued edits sync when you reconnect.</p>
+            </div>
+          </li>
+          <li class="flow-stage flow-stage--sync">
+            <div class="flow-visual">
+              <div class="flow-art flow-art--sync" aria-hidden="true"></div>
+            </div>
+            <div class="flow-copy">
+              <h3>Secure sync</h3>
+              <p>Readable labels can sync as text. A photo goes to the CasaSense API when online recognition is needed.</p>
+            </div>
+          </li>
+          <li class="flow-stage flow-stage--cloud">
+            <div class="flow-visual">
+              <div class="flow-art flow-art--cloud" aria-hidden="true"></div>
+            </div>
+            <div class="flow-copy">
+              <h3>Home records and services</h3>
+              <p>The CasaSense API saves your records and calls these services as needed.</p>
+            </div>
+            <ul class="flow-services" role="list">
+              <li class="flow-service">
+                <div class="flow-art flow-art--gemini" aria-hidden="true"></div>
+                <div><strong>Gemini</strong><span>Enhanced recognition</span></div>
+              </li>
+              <li class="flow-service">
+                <div class="flow-art flow-art--email" aria-hidden="true"></div>
+                <div><strong>OCI Email Delivery</strong><span>Account and invite emails</span></div>
+              </li>
+              <li class="flow-service">
+                <div class="flow-art flow-art--map" aria-hidden="true"></div>
+                <div><strong>Geoapify</strong><span>Address lookup</span></div>
+              </li>
+            </ul>
+          </li>
+        </ol>
       </section>
 
       <section class="principles" id="why-trust-us" aria-labelledby="trust-heading">
