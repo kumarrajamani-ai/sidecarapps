@@ -335,6 +335,36 @@
       background: #ffffff;
     }
 
+    .app-download {
+      display: flex;
+      width: fit-content;
+      max-width: 100%;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      padding: 0.55rem 0.85rem 0.55rem 0.55rem;
+      border: 1px solid var(--line);
+      border-radius: 0.95rem;
+      background: var(--surface);
+    }
+
+    .app-download:hover { border-color: var(--brand); }
+
+    .app-download img {
+      width: 7rem;
+      height: auto;
+      flex: none;
+    }
+
+    .app-download strong, .app-download small { display: block; }
+
+    .app-download small {
+      margin-top: 0.2rem;
+      color: var(--ink-soft);
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
     .product-visual {
       min-width: 0;
       position: relative;
@@ -644,10 +674,10 @@
                   </a>
                 </li>
                 <li>
-                  <span class="platform">
+                  <a class="platform" href="https://apps.apple.com/app/casasense/id6831296057">
                     <img src="assets/platform-apple.svg" alt="" width="24" height="24">
-                    <span>App Store<small>Coming soon</small></span>
-                  </span>
+                    <span>App Store<small>iPhone</small></span>
+                  </a>
                 </li>
                 <li>
                   <span class="platform">
@@ -667,6 +697,13 @@
                 <a class="web-action" href="https://casasense.sidecar360.com/">Try CasaSense (Web)</a>
                 <a class="secondary-action" href="#sample-home">Open a sample appliance record</a>
               </div>
+              <a class="app-download" href="https://apps.apple.com/app/casasense/id6831296057">
+                <img src="assets/casasense-app-store-qr.png" alt="" width="112" height="112">
+                <span>
+                  <strong>Scan to get CasaSense</strong>
+                  <small>Open the App Store with your iPhone camera.</small>
+                </span>
+              </a>
             </div>
 
             <div class="product-visual">

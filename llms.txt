@@ -2,7 +2,7 @@
 
 > Sidecar Apps builds consumer apps that use on-device and cloud AI for everyday tasks. CasaSense, its first app, helps homeowners and landlords build a home appliance inventory and stay on top of maintenance.
 
-CasaSense is available on the web. Photograph an appliance or scan its label to save its model and serial numbers. Keep track of appliance age and warranty details, get maintenance reminders, check recalls, and compare replacement options.
+CasaSense is available on the web and for iPhone on the App Store. Photograph an appliance or scan its label to save its model and serial numbers. Keep track of appliance age and warranty details, get maintenance reminders, check recalls, and compare replacement options.
 
 Customers own their appliance records and choose which details to share. They can share records with family, renters, contractors, home warranty companies, and appliance sellers when requesting service or comparing replacements.
 
@@ -12,6 +12,7 @@ CasaSense can read a label on the phone and send only the extracted text when it
 
 - [CasaSense overview](https://sidecar360.com/)
 - [Open the CasaSense web app](https://casasense.sidecar360.com/)
+- [Download CasaSense for iPhone](https://apps.apple.com/app/casasense/id6831296057)
 - [Try a sample appliance record](https://sidecar360.com/#sample-home)
 - [See how CasaSense works](https://sidecar360.com/#how-it-works)
 - [CasaSense help and feedback](https://casasense.sidecar360.com/support/)
